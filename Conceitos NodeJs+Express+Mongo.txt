@@ -1,0 +1,388 @@
+
+::
+INICIAR PROJECTO: {
+::
+INICIAR NODE_JS+MONGO_DB:
+	// INICIAR NODE_JS
+	// cmd
+	. cd C:\Users\Nuno\Documents\_MY_PROJECTS\SIST_DISTRIBUIDOS\RESTful-App        // dir de app.js
+	. C:\Users\Nuno\Documents\_MY_PROJECTS\SIST_DISTRIBUIDOS\RESTful-App > nodemon 
+	/+ liga servidor de cada vez que mudo RESTfull-App +/
+	
+	// FECHAR MONGO_DB:
+	// gestor-tarefas
+	. terminar: MongoDB Database Server
+	
+	// INICIAR MONGO_DB
+	// cmd
+	. cd  C:\Program Files\MongoDB\Server\4.0\bin> net start mongodb
+	. C:\Program Files\MongoDB\Server\4.0\bin> mongo
+	
+	// MONGO-SHELL
+	. > cls
+	. > db                                         // mostra current-db
+	. > show dbs                                   // mostra bds existentes
+	. > use restfullDB                             // muda para restfullDB (se não existir cria)
+	. > show collections                           // restfullDB collections
+	// show documents in collection "customers"
+	. > db.customers.find();
+	     ou
+	. > db.customers.find().pretty();
+	
+}
+--------------------------------------------------------------------------
+::
+TEST MONGO_DB: {
+/+ S.D,\NODE_JS+MONGO_DB\MONGO_DB\MongoDB_In_30_Minutes\(min.07.00) +/
+	// CREATE DB "apagardb"
+	use apagardb
+	db           // mostra current-db
+	
+	// CREATE USER FOR DB "apagardb"
+	db.createUser({
+		user:"brad",
+		pwd:"nnn",
+		roles: ["readWrite", "dbAdmin"]
+	});
+	
+	// CREATE COLLECTION(TBL) "customers"
+	db.createCollection('customers');
+	show collections
+	'out: customers' 
+	
+	// DOCUMENT(DATA)
+	{
+		firstname:"john",
+		lastname:"doe",
+		memberships:["mem1","mem2"],
+		address:{
+			city:"N.Y",
+			street:"4 main street"
+		}
+	}
+	
+	// INSERT DOCUMENT IN COLLECTION "customers"
+	db.customers.insert({
+		firstname:"john",
+		lastname:"doe",
+		memberships:["mem1","mem2"],
+		address:{
+			city:"N.Y",
+			street:"4 main street"
+		}
+	});
+	
+	// SHOW DOCUMENTS IN COLLECTION "customers"
+	db.customers.find();
+	ou
+	db.customers.find().pretty();
+	
+}
+--------------------------------------------------------------------------
+::
+CONCEITOS {
+::
+JAVA-SCRIPT NO BROWSERS E SERVIDOR:
+	// BROWSER:
+	. desenvolveram motores(engines) que interpretam java-script qd carregam a página
+	. exemplo desses motores é o v8_engine da google (transforma java-script em código máquina)
+	// SERVIDOR
+	. esse motor pode correr em qq máquina (Exemplo servidor Web)
+	. a lógica é construida em java-script e executamo-la com nodejs que nos proporciona
+	  funcionalidades de servidor
+	// VANTAGENS NODE_JS
+	. front-end e back-end são feitas na mma linguagem (mantém o contexto)
+	. é mt bom a atender multiplos pedidos ao mm tempo (assincrono)
+	. menos bom a atender 1 só pedido intensivo
+
+::
+NODE_JS:
+	. é um runtime
+	. é java script a correr no servidor
+	. usado para construir aplicações web
+	. é assincrono o que permite milhares de ligações ao mesmo tempo (suporta concorrencia)
+	  não precisa de esperar que uma tarefa termine (Ex. carregar 1 ficheiro) para executar
+	  outra. Nota: php é sincrono.
+	. ao contrário PHP onde instalamos servidor Apache, em nodejs criamos os parametros
+	  do nosso webserver: porto|dominio onde escuta. Node executa o ficheiro server.js
+	  em loop
+	  
+::
+Routes, End-point:
+	. Exemplo:
+			http //127.0.0.1:3000/projects/nodejs
+			/projects/nodejs - é a route ou End-point
+	
+::
+SCHEMA + MODEL:
+	. schema define como mongoose escreve dados na BD - .18\'min.05.00'
+	. model é criado usando schema como blueprint(layout) podendo 
+	  depois ser instanciado e usado na BD.
+	  // exemplo
+	  userSchema = new schema({
+		title: {type:String, required:true},  // required: title obrigatório
+		author: String });
+	 var UserData = mongoose.model('UserData', 'userSchema');
+}
+--------------------------------------------------------------------------	  
+::
+TUTORIAL RESUMO:"\% S.D.\NODE_JS+MONGO_DB\NODE_JS\RESUMO" {
+	//! NODE_JS
+	. 2 - First Application:
+		.criar servidor - 'min.03.45'
+		
+	. 3 - JavaScript Modules & Anonymous Functions:
+		.exportar myModule1.js para app.js - 'min.04.00'
+		
+	. 5 - Rendering HTML as Response:
+		.passar html para response.write() - 'min.01.00' 
+		
+	. 6 - Routing:
+		.Nota: "feito com puro nodejs, faz-se express!"
+	
+	//! EXPRESS
+	. 8 - Express - Setup of Express:
+		.Nota: "usa express-generator, Traversy não usa!"
+		
+	. 9 - Express Project Structure & First little App:
+		// explanation:
+		.var port = ..., app.set(...), http.createServer(app) - 'min.01.00'
+	. 10,11:
+		.Nota: "usa templates, Traversy não usa!"
+		
+	. 12 - Express - GET and POST Requests
+		// explanation:
+		.router.get('/test/:id', ...)  - 'min.01.20'
+		.router.post('/test/submit', ...) - 'min.05.00'
+			res.redirect(...)
+	. 13 - Express-Validator and Express-Session (Validation & Sessions)
+		.Nota: "instala modulo express-validator"
+		
+	//! MONGO_DB
+	. 14 - MongoDB - Setup MongoDB:
+		.correr mongo com 2 terminais: Servidor/Cliente - 'min.02.40'
+		
+	. 15 - MongoDB - Insert and Get Data with MongoDB:
+		// explanation:
+		.var assert = require('assert') - 'min.02.40'
+		.cursor.foreach(function(doc,err) - 'min.09.40'
+		// porto
+		.verificar porto mongoDB + BD a aceder - 'min.03.30'
+		// CRUD
+		.get + insert - 'min.05.00'
+		// rendering - ATENÇÃO
+		.ter cuidado de fazer render da página depois de ter dados da BD  - 'min.12.00'
+		
+	. 16 - MongoDB - Update and Delete Data with MongoDB:
+		// CRUD
+		.update + delete - 'min.00.30'
+		
+	. 18 - MongoDB - Mongoose
+		. instalação  - 'min.01.00'
+		// apagada depedencia mongoDB
+		. modulo mongoose já traz mongoDB - 'min.02.00'
+		. schema define como mongoose escreve dados na BD - 'min.04.30'
+		. model é criado usando schema como blueprint(layout) podendo 
+		  depois ser instanciado e usado na BD.
+		  // exemplo
+		  userSchema = new schema({
+			title: {type:String, required:true},  // required: title obrigatório
+			author: String });
+		 var UserData = mongoose.model('UserData', 'userSchema');
+::
+5-Rendering HTML as Response('min.01.00'):
+	. ficheiros criados no projecto (index.html,...) estão no servidor,
+	  precisam 1º ser chamados no servidor e só a seguir no browser do utilizador:
+		.var fs = require('fs'); // import file-sistem
+		
+::
+15 - MongoDB - Insert and Get Data with MongoDB:
+	// collection
+	. collection = tabela  - 'min.07.00'
+	// foreach
+	. cursor.foreach(function(doc,err) - 'min.09.40'
+		.corre function para cada eltº do cursor(foreach)
+::
+ 18 - MongoDB - Mongoose:
+	// SCHEMA + MODEL
+	. schema define como mongoose escreve dados na BD - 'min.04.30'
+	. model é criado usando schema como blueprint(layout) podendo 
+	  depois ser instanciado e usado na BD.
+	  // exemplo
+	  userSchema = new schema({
+		title: {type:String, required:true},  // required: title obrigatório
+		author: String });
+	 var UserData = mongoose.model('UserData', 'userSchema');
+}
+--------------------------------------------------------------------------
+::
+TRABALHO - AUTENTICAÇÃO: {
+::
+/* \MEAN Stack Front To Back [Part 1]\('min.05.20') */
+::
+APRESENTAÇÃO DA APP:
+	. min.7.30
+::
+TOKENS:
+	. são atribuidos tokens aos end-points. Users sem token para determinada rota
+	  não podem aceder á página.
+::
+CORS:
+	. porque Angular e NodeJs vão estar em portos diferentes.
+	  é adicionado um middleware que vai permitir fazer pedidos.
+::
+ANGULAR2/ANGULAR-CLI:
+	. explica como Angular+Node ficam a ser chamados no mesmo porto
+::
+ANGULAR2-JWT:
+	. trata dos tokens
+
+::	
+AUTH GUARD:
+	. autenticação de rotas
+
+::
+ANGULAR-FLASH MESSAGE MODULE:
+	. enviar mensagem ao utilizador, Exemplo:
+		.mensagem de logout
+
+::
+DEPLOYMNET:
+	. vai ser no heroku mas podia ser no digitalOcean
+
+/* \MEAN Stack Front To Back [Part 2]\('min.05.20') */
+::
+INSTALAÇÃO DE PACKAGES (min.09.00):
+/+ REF: \% S.D.\NODE_JS+MONGO_DB\NODE_JS\TRAVERSY MEDIA\ExpressJS_Crash_Course (min.07.30) +/
+	. npm install bcryptjs --save
+	. npm install body-parser --save
+	. npm install cors
+	. npm install express --save
+	. npm install jsonwebtoken --save
+	. npm install mongoose --save
+	. npm install passport --save
+	. npm install passport-jwt --save
+	
+	. npm install -g nodemon
+::
+CRIAR FICHEIRO "app.js":
+/+ REF: \% S.D.\NODE_JS+MONGO_DB\NODE_JS\TRAVERSY MEDIA\ExpressJS_Crash_Course (min.09.30) +/	
+
+	
+
+}
+--------------------------------------------------------------------------
+::
+INSTALAÇÃO MONGO_DB: {
+/* \% S. D.\NODE_JS + MONGO_DB\MONGO_DB\MongoDB_In_30_Minutes(02.30) */
+::
+LOCALIZAÇÃO MONGO_DB:
+	. C:\Program Files\MongoDB\Server\4.0
+::
+min. 03.30:
+	. executei a opção "complete install" e não a "custom install"
+	. não criei pastas \data\db no local que o tutorial disse
+	. não criei flags no terminal  // ele criou para referenciar as pastas \data\db no local que as criou
+	// VER: INSTALAÇÃO_NORMAL.mp4 (Browser\Marcadores\S.D.\NODE_JS+MONGO_DB\INSTALAÇÃO_NORMAL.mp4)
+	. criei pastas: \data\db em C:\data\db             // para conseguir correr servidor
+		. corri mongo em 2 terminais Servidor-Cliente  // ver acima: TUTORIAL RESUMO: .14 
+::
+CRIAR VARIÁVEL AMBIENTE PARA CORRER MONGO_DB (OPÇ):
+	. Browser\Marcadores\S.D.\NODE_JS+MONGO_DB\INSTALAÇÃO_NORMAL.mp4 (min.10.10)
+	
+------------------------------------------------------------------------------------		
+::
+CORRER MONGO_DB:
+	// SERVIDOR\SERVIÇO
+	. C:\Program Files\MongoDB\Server\4.0\bin > mongod
+	// CLIENTE
+	. C:\Program Files\MongoDB\Server\4.0\bin > mongo
+
+}
+--------------------------------------------------------------------------
+::
+NOTAS: {
+::
+'VS_CODE:'
+	'. existe um tutorial nos marcadores Firefox, tem marcado os minutos'
+	
+::
+POSTMAN:
+	/+ REF: \S.D.\NODE_JS+MONGO_DB\TRABALHOS\AUTENTICAÇÃO\PART.3.MP4\(min.12.00) +/
+	. usado para fazer pedidos http
+	. pesquisar postman chrome: 
+	  https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/related
+	. já está disponivel nas Aplicações do chrome
+	. explicação:
+		. \BIBLIOTECA\WEB_SERVICES\REST_API_Web_Services_Explained\(min.10.00)
+		. Browser\Marcadores\POSTMAN(02.00)
+::
+PORTOS:
+	. é possivel que angular e node tenham de usar portos diferentes como: 3000, 8000
+	
+::
+INSTALAÇÃO DE PACKAGES NODE_JS:
+/+ REF: \% S.D.\NODE_JS+MONGO_DB\NODE_JS\TRAVERSY MEDIA\ExpressJS_Crash_Course (min.07.30) +/
+//  Mudar "dependencies" em "package.json" e usar "npm install" não funciona
+//  Fazer:
+	. npm install express --save
+	. npm install body-parser --save
+	...
+
+::
+PASTA "node_modules":
+	. contém as depedencias
+	. foi gerada quando adicionado package express
+	
+::
+DEPENDENCIAS: 
+	. são módulos que a aplicação usa para desenvolvimento da app
+	
+::
+NPM:
+	. gestor de pacotes, usado para instalar modulos
+	. os modulos são instalados na pasta node_modules
+Ex:
+	. npm install express    // modulo fica acessivel apenas na dir da aplicação
+	. npm install -g express // modulo fica acessivel globalmente
+	
+::
+MODULOS:
+	. mongoose - é um modulo para interagir com a BD MongoDB
+	. http - é um modulo nativo, não é preciso instalar
+		
+::
+./index.html - diz explicitamente que este ficheiro está na current-dir
+
+::
+
+::
+
+::
+
+
+
+ }
+--------------------------------------------------------------------------
+
+
+
+
+
+::
+POSSIVEIS ERROS: {
+:: 
+PART_3 -- min.12.00:
+	. Faz post do registo no postman mas não em restfullDB(MONGO_DB).
+	. Devia ter criado uma collection "users" com a data inserida no
+	  POSTMAN - CMD: show collection - out: users
+SOLUÇÃO:
+	. criar 1 collection de testes:
+	  db.createCollection('delThisCollection');
+	  show collections // mostrou-me as 2 collections
+	
+
+
+
+}
+--------------------------------------------------------------------------

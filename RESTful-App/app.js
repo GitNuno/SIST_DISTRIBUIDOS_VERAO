@@ -39,15 +39,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // rota index (HOME_PAGE): raiz '/': localhost:3000/
 app.get('/', function (req, res) {
-    res.send('End-point Provisório!!!!');
+    res.send('End-point Inválido!!!!');
 });
 // REF: \AUTH\.2\(min.14.00)
 // rotas users vão para: /routes/users.js
 // tudo que for localhost:3000/users/qqCoisa vai para essa pasta
 // EX. localhost:3000/users/register, /register está def. em \routes\users.js
+// usamos /users para todas as rotas users
 app.use('/users', users);
 
 // listen: inicia servidor na porta 3000
-app.listen(port, function () {
-    console.log('server started on port' + port)
+app.listen(port, () => {
+  console.log('Server started on port '+port);
 });
+

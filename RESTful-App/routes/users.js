@@ -1,20 +1,35 @@
 const express = require('express');
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const config = require('../config/database');
+const User = require('../models/user');
 
-// const passport = require('passport');
-// const jwt = require('jsonwebtoken');
-// const config = require('../config/database');
-// const User = require('../models/user');
 
 const router = express.Router();
 
-/* ROTAS: /register, /authenticate, */
-
-// REF:\AUTH\.2\(min.15.30)
-// '/register': faz users/register automaticamente
+/* ROTAS: /register, /authenticate, profile, validate */
 // REGISTO
-router.get('/register', (req, res, next) => {
-  res.send('REGISTO');
+// REF:\AUTH\.2\(min.15.30)
+// faz users/register automaticamente por ["app.use('/users', users)" em app.js]
+router.post('/register', (req, res, next) => {
+    // REF:\AUTH\.3\(min.7.00)
+    // req.body - guardar o que foi introduzido no formulário
+    let newUser = new User ({
+    name: req.body.name,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password
+    // password está em plainText mas será encriptada com bcript
   });
+  // addUser: definido em models\user.js
+  User.addUser(newUser, (err, user) => {
+    if(err){
+      res.json({success: false, msg:'Failed to register user'});
+    }else{
+      res.json({success: true, msg:'User registered'});
+    }
+  })
+});
 
 // AUTENTICAÇÃO
 router.post('/authenticate', (req, res, next) => {
@@ -24,11 +39,6 @@ router.post('/authenticate', (req, res, next) => {
 // PERFIL
 router.get('/profile', (req, res, next) => {
   res.send('PERFIL');
-  });
-
-// VALIDATE
-router.get('/validate', (req, res, next) => {
-  res.send('VALIDATE');
   });
 module.exports = router;
 
