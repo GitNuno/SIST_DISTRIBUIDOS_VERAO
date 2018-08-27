@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
-// Ref. ás pastas criadas
+// procura users em ./routes/users
 const users = require('./routes/users');
 const config = require('./config/database');
 
@@ -31,6 +31,13 @@ app.use(cors());
 // bodyParser: middleware - permite por Ex. captar data na submissão
 // de um formulário
 app.use(bodyParser.json());
+
+// REF: \AUTH\.4\(min.1.00)
+// criado /config/passport.js
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
 
 // REF: \AUTH\.2\(min.17.30)
 // Static-Folder: criar lugar guardar ficheiros-ocultos (ANGULAR_2)

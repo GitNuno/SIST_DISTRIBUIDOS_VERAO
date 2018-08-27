@@ -25,24 +25,30 @@ router.post('/register', (req, res, next) => {
 
 // Authenticate
 router.post('/authenticate', (req, res, next) => {
+  // input username, password
   const username = req.body.username;
   const password = req.body.password;
 
   User.getUserByUsername(username, (err, user) => {
     if(err) throw err;
+    // se não existir user
     if(!user) {
       return res.json({success: false, msg: 'User not found'});
     }
-
+    // se existir user
+    // compara pass introduzida com hash que nos é enviada
     User.comparePassword(password, user.password, (err, isMatch) => {
       if(err) throw err;
       if(isMatch) {
         const token = jwt.sign({data: user}, config.secret, {
-          expiresIn: 604800 // 1 week
+          expiresIn: 604800 // pass expira numa semana
         });
+        // resposta para front-end
         res.json({
           success: true,
           token: 'JWT '+token,
+          // dados user a enviar(não enviar psswd!)
+          // user devolvido por: 'getUserByUsername'(acima)
           user: {
             id: user._id,
             name: user.name,

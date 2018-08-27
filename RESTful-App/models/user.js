@@ -35,11 +35,13 @@ module.exports.getUserById = function(id, callback) {
   User.findById(id, callback);
 }
 
+// chamada em users.js
 module.exports.getUserByUsername = function(username, callback) {
-  // query para .findOne()
+  // query para User.findOne()
   const query = {username: username}
   User.findOne(query, callback);
 }
+
 // REF:\AUTH\.3\(min.10.00)
 // pega na pass inserida no formulário, encripta e atribui pass-encriptada
 module.exports.addUser = function(newUser, callback) {
@@ -49,14 +51,17 @@ module.exports.addUser = function(newUser, callback) {
       // callback devolve err+hash
       if(err) throw err;
       newUser.password = hash;
+      // guarda na BD
       newUser.save(callback);
     });
   });
 }
 
-// module.exports.comparePassword = function(candidatePassword, hash, callback) {
-//   bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
-//     if(err) throw err;
-//     callback(null, isMatch);
-//   });
-// }
+// REF:\AUTH\.4\(min.13.30)
+// chamada em users.js
+module.exports.comparePassword = function(candidatePassword, hash, callback) {
+  bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
+    if(err) throw err;
+    callback(null, isMatch);
+  });
+}
