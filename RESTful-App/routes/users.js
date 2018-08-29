@@ -87,6 +87,3 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res,
 
 // permite que objeto router deste ficheiro(users.js) seja acedido fora
 module.exports = router;
-
-
-
