@@ -42,6 +42,7 @@ require('./config/passport')(passport);
 // REF: \AUTH\.2\(min.17.30)
 // Static-Folder: criar lugar guardar ficheiros-ocultos (ANGULAR_2)
 // tem de estar acima de: app.get('/',...) ,  __dirname: dir-atual
+// /public em bookSt é /client???
 app.use(express.static(path.join(__dirname, 'public')));
 
 // rota index (HOME_PAGE): raiz '/': localhost:3000/

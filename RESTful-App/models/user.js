@@ -43,6 +43,7 @@ module.exports.getUserByUsername = function(username, callback) {
 }
 
 // REF:\AUTH\.3\(min.10.00)
+// usada em users: Register
 // pega na pass inserida no formulário, encripta e atribui pass-encriptada
 module.exports.addUser = function(newUser, callback) {
   // genSalt: gera chave aleatória para fazer hash da password
