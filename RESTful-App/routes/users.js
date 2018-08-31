@@ -1,8 +1,10 @@
+// Todos os pedidos á BD serão atendidos aqui (rotas-users)
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
+// MODELOS - (EXPLAINED: \zVIDEO\.10\(mi.2.30))
 const User = require('../models/user');
 
 
@@ -48,7 +50,7 @@ router.post('/authenticate', (req, res, next) => {
     User.comparePassword(password, user.password, (err, isMatch) => {
       if(err) throw err;
       if(isMatch) {
-        // const token = jwt.sign({data: user}, config.secret, { ++meanauth
+        // config.secret: def. em \config\database.js
         const token = jwt.sign({data:user}, config.secret, {
           expiresIn: 604800 // pass expira numa semana
         });
@@ -83,7 +85,6 @@ router.post('/authenticate', (req, res, next) => {
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
   res.json({user: req.user});
 });
-
 
 // permite que objeto router deste ficheiro(users.js) seja acedido fora
 module.exports = router;

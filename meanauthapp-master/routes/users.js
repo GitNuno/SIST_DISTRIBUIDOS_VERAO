@@ -1,8 +1,10 @@
+// Todos os pedidos á BD serão atendidos aqui (rotas-users)
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
+// MODELOS - (EXPLAINED: \zVIDEO\.10\(mi.2.30))
 const User = require('../models/user');
 
 // Register

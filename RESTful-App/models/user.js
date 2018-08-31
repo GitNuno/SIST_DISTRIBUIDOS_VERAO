@@ -25,12 +25,13 @@ const UserSchema = mongoose.Schema ({
   }
 });
 // REF:\AUTH\.3\(min.03.30)
-// module.exports: para poder usar "User" a partir do exterior Ex. app.js (Ver: Node.js_Tutorial_8_Modules)
+// module.exports: Ver: BIBLIOTECA\Node.js_8_Modules
 // mongoose.model('User', UserSchema) - User: nome do modelo + nome Schema
 const User = module.exports = mongoose.model('User', UserSchema);
 
 // FUNÇÕES: -------------------------------------------------------
 // module.exports: para poder usar "getUserById" a partir do exterior
+// Todos os pedidos á BD serão atendidos em \routes\users
 module.exports.getUserById = function(id, callback) {
   User.findById(id, callback);
 }

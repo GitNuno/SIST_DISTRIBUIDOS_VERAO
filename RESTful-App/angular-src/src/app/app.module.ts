@@ -11,7 +11,10 @@ const appRoutes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'profile', component:ProfileComponent}
+  {path:'profile', component:ProfileComponent},
+  // REF: \zVIDEO_PLAYER\15(min.02.00)
+  // notar que não tem de ser video-center
+  {path:'videos', component:VideoCenterComponent}
 ]
 
 import { AppComponent } from './app.component';
@@ -21,6 +24,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { VideoCenterComponent } from './components/video-center/video-center.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    VideoCenterComponent
   ],
   imports: [
     BrowserModule,
