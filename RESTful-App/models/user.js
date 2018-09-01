@@ -25,8 +25,7 @@ const UserSchema = mongoose.Schema ({
   }
 });
 // REF:\AUTH\.3\(min.03.30)
-// module.exports: Ver: BIBLIOTECA\Node.js_8_Modules
-// mongoose.model('User', UserSchema) - User: nome do modelo + nome Schema
+// cria modelo com nome "video" baseado em UserSchema
 const User = module.exports = mongoose.model('User', UserSchema);
 
 // FUNÇÕES: -------------------------------------------------------

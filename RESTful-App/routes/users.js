@@ -5,6 +5,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 // MODELOS - (EXPLAINED: \zVIDEO\.10\(mi.2.30))
+// importar modelo user.js
 const User = require('../models/user');
 
 
@@ -74,7 +75,6 @@ router.post('/authenticate', (req, res, next) => {
   });
 });
 
-
 // PERFIL (rota NÃO protegida)
 // router.get('/profile', (req, res, next) => {
 //   res.send('PROFILE');
@@ -85,6 +85,28 @@ router.post('/authenticate', (req, res, next) => {
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
   res.json({user: req.user});
 });
+
+/* ----------------------------------------- ZONA TESTES ------------------------------------------------------- */
+
+// TESTE_APAGAR!!: PARA TESTAR LIGAÇÃO em localhost:3000/users
+router.get('/', function(req, res){
+  res.send('users works');
+});
+
+// TESTE_APAGAR!!: Capturar collection:users de RestfulBD em localhost:3000/users/users
+router.get('/users', function(req, res){
+  console.log('Get request for all users');
+  // .find() função de mongoose
+  User.find({})
+  .exec(function(err, users){
+      if (err){
+          console.log("Error retrieving users");
+      }else{
+          res.json(users);
+      }
+  });
+});
+
 
 // permite que objeto router deste ficheiro(users.js) seja acedido fora
 module.exports = router;
