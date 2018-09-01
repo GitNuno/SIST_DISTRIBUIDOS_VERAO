@@ -4,17 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // REF: \AUTH\.5\(min.11.30)
 import {RouterModule, Routes} from '@angular/router';
+
+// REF: \zVIDEO\15(min.02.00)
 // array de rotas
+// refere qual o componente a renderizar de acordo com a rota
 const appRoutes: Routes = [
-  // path:'' - porque é home
-  {path:'', component:HomeComponent},
+  // rotas users
+  {path:'', component:HomeComponent},                  // path:'' - porque é home
   {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'profile', component:ProfileComponent},
-  // REF: \zVIDEO_PLAYER\15(min.02.00)
-  // notar que não tem de ser video-center
-  {path:'videos', component:VideoCenterComponent}
+  // rotas app-video_player
+  {path:'videos', component:VideoCenterComponent}     // notar que rota não tem de ser video-center
 ]
 
 import { AppComponent } from './app.component';

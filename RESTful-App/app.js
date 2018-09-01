@@ -57,7 +57,6 @@ require('./config/passport')(passport);
 // dá a expressJs acesso á pasta \public - liga expressJs com angular
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // rota index (HOME_PAGE): raiz '/': localhost:3000/
 app.get('/', function (req, res) {
     res.send('End-point Inválido!!!!');
