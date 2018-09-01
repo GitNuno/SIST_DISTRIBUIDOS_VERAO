@@ -1,6 +1,8 @@
 <!-- REF: \AUTH\.5\(min.16.00) -->
+<!-- REF: \zVIDEO\.15\(min.03.30) -->
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">RestFull App</a> 
+  <a class="navbar-brand" href="#">VIDEO player</a> 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,7 +10,6 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="nav navbar-nav navbar-left">
         <li><a class="nav-link" [routerLink]="['/']">Home <span></span></a></li>
-        <!-- REF: \zVIDEO\.15\(min.03.30) -->
         <li><a class="nav-link" [routerLink]="['/videos']">Playlist <span></span></a></li>
     </ul>
     <ul class="navbar-nav ml-auto">
@@ -17,3 +18,25 @@
     </ul>
   </div>
 </nav>
+
+
+<!--
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <div class= "navbar-header">
+      <a class="navbar-brand" href="#">VideoPlayer</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/videos" routerLinkActive="active">PlayList</a></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li><a class="nav-link" [routerLink]="['/login']">Login </a></li>
+      <li><a class="nav-link" [routerLink]="['/register']">Register</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+-->
