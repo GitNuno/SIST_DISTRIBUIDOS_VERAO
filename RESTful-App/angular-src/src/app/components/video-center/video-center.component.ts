@@ -18,7 +18,7 @@ videos: Video[] = [
     {"_id":"4", "title":"Title 4", "url":"Url 4", "description":"desc 4"}
   ];
 
-  // REF:\zVIDEO\.18\(min.3.00)
+  // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
   selectedVideo: Video;
 
   constructor() { }
@@ -30,7 +30,5 @@ videos: Video[] = [
     this.selectedVideo = video;
     console.log(this.selectedVideo);
   }
-
-
 
 }

@@ -5,13 +5,15 @@ import { Video } from '../video';
   selector: 'video-list',
   templateUrl: './video-list.component.html',
   styleUrls: ['./video-list.component.css'],
-  // editor não reconhece, mas parece funcionar... usei @Input() abaixo na class
-  // inputs: ['videos']
   outputs:['Selectvideo']
+  // editor não reconhece, mas funciona... usei @Input() abaixo na class
+  // inputs: ['videos']
 })
 export class VideoListComponent implements OnInit {
+
   @Input() videos: String = '';
-  // REF:\zVIDEO\.17\(min.2.30)
+  
+  // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
   public Selectvideo = new EventEmitter();
   constructor() { }
 

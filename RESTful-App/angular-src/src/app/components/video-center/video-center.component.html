@@ -1,4 +1,5 @@
 <!-- REF:\zVIDEO\.16\(min.1.00)-->
+<!-- REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!! -->
 <!--"Anexar" html de video-list e video-detail em video-center-->
 <div class="row">
   <div class="col-sm-9">
@@ -6,9 +7,9 @@
   </div>
   <div class="col-sm-3">
  <!-- REF:\zVIDEO\.17\(min.2.00)-->
- <!-- PROPRETY_DATA_BINDING:         [videos]="videos"
+ <!-- PROPRETY_DATA_BINDING:
       Especificar que vai haver um input de videos na video-list.
-      [videos]: ver "video-center.component.ts" - "videos": ver "video-list.component.ts" -->
+      [videos]: ref. "video-center.component.ts" - "videos": ref. "video-list.component.ts" -->
       <video-list (Selectvideo)="onSelectedVideo($event)" [videos]="videos"></video-list>
   </div>
 </div>

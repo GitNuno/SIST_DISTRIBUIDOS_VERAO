@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
 // REF: \zVIDEO\15(min.02.00)
-// array de rotas
+// ARRAY DE ROTAS
 // refere qual o componente a renderizar de acordo com a rota
 const appRoutes: Routes = [
   // rotas users
@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   {path:'dashboard', component:DashboardComponent},
   {path:'profile', component:ProfileComponent},
   // rotas app-video_player
+  // exibição de video-detail e video-list sao tb nesta rota !!
   {path:'videos', component:VideoCenterComponent}     // notar que rota não tem de ser video-center
 ]
 
