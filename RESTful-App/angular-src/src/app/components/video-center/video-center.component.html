@@ -1,3 +1,14 @@
-<p>
-  video-center works!
-</p>
+<!-- REF:\zVIDEO\.16\(min.1.00)-->
+<!--"Anexar" html de video-list e video-detail em video-center-->
+<div class="row">
+  <div class="col-sm-9">
+    <video-detail *ngIf="selectedVideo" [video]="selectedVideo"></video-detail>
+  </div>
+  <div class="col-sm-3">
+ <!-- REF:\zVIDEO\.17\(min.2.00)-->
+ <!-- PROPRETY_DATA_BINDING:         [videos]="videos"
+      Especificar que vai haver um input de videos na video-list.
+      [videos]: ver "video-center.component.ts" - "videos": ver "video-list.component.ts" -->
+      <video-list (Selectvideo)="onSelectedVideo($event)" [videos]="videos"></video-list>
+  </div>
+</div>

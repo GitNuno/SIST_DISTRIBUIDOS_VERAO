@@ -26,6 +26,7 @@ const UserSchema = mongoose.Schema ({
 });
 // REF:\AUTH\.3\(min.03.30)
 // cria modelo com nome "video" baseado em UserSchema
+// usado nas rotas para GET, POST... CRUD
 const User = module.exports = mongoose.model('User', UserSchema);
 
 // FUNÇÕES: -------------------------------------------------------

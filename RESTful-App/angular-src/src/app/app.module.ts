@@ -27,6 +27,9 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { VideoCenterComponent } from './components/video-center/video-center.component';
+import { VideoListComponent } from './components/video-list/video-list.component';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { VideoCenterComponent } from './components/video-center/video-center.com
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    VideoCenterComponent
+    VideoCenterComponent,
+    VideoListComponent,
+    VideoDetailComponent,
   ],
   imports: [
     BrowserModule,

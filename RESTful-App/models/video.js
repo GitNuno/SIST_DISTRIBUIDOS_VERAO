@@ -16,5 +16,6 @@ const VideoSchema = mongoose.Schema ({
     type: String,
   }
 });
-// cria modelo com nome "video". videos é o nome da coleccção
+// cria modelo com nome "video" - "videos" é o nome da coleccção
+// usado nas rotas para GET, POST... CRUD
 module.exports = mongoose.model('video', VideoSchema, 'videos');
