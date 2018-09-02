@@ -30,6 +30,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { VideoCenterComponent } from './components/video-center/video-center.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
+// \zVIDEO\.21\(min.1.00)
+import { SafePipe } from './components/safe.pipe';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { VideoDetailComponent } from './components/video-detail/video-detail.com
     VideoCenterComponent,
     VideoListComponent,
     VideoDetailComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
