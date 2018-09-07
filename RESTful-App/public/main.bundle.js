@@ -434,6 +434,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var VideoCenterComponent = (function () {
     function VideoCenterComponent(_videoService) {
         this._videoService = _videoService;
+        // esconder form para adicionar novo video
+        this.hideNewVideo = true;
     }
     // REF:\zVIDEO\.20\(min.2.30)
     // subscribe ao serviço "video.service.ts" que liga Angular com BD
@@ -444,7 +446,27 @@ var VideoCenterComponent = (function () {
     };
     VideoCenterComponent.prototype.onSelectedVideo = function (video) {
         this.selectedVideo = video;
+        this.hideNewVideo = true;
         console.log(this.selectedVideo);
+    };
+    // REF:\zVIDEO\.22\(min.5.00)
+    // recebe video submetido
+    // adicionar video submetido na BD
+    // subscribe para obter data na resposta(resNewVideo)
+    // push resNewVideo no array(videos)
+    VideoCenterComponent.prototype.onSubmitAddVideo = function (video) {
+        var _this = this;
+        this._videoService.addVideo(video)
+            .subscribe(function (resNewVideo) {
+            _this.videos.push(resNewVideo);
+            _this.hideNewVideo = true;
+            _this.selectedVideo = resNewVideo;
+        });
+    };
+    // REF:\zVIDEO\.22\(min.7.00)
+    // esconder/revelar form para adicionar novo video
+    VideoCenterComponent.prototype.newVideo = function () {
+        this.hideNewVideo = false;
     };
     VideoCenterComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
@@ -586,15 +608,24 @@ var VideoService = (function () {
         // REF:\zVIDEO\.20\(min.1.00)
         // preciso referenciar rota: "/api/videos" (servidor expressJs: app.js porto:3000)
         this._getUrl = "/api/videos";
+        // REF:\zVIDEO\.22\(min.2.00)
+        this._postUrl = "/api/video";
     }
     VideoService.prototype.getVideos = function () {
         // captura todos os videos no pedido http.get("/api/videos")
         return this._http.get(this._getUrl)
             .map(function (response) { return response.json(); });
     };
+    // adicionar video na BD
+    VideoService.prototype.addVideo = function (video) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        return this._http.post(this._postUrl, JSON.stringify(video), options)
+            .map(function (response) { return response.json(); });
+    };
     VideoService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === 'function' && _a) || Object])
     ], VideoService);
     return VideoService;
     var _a;
@@ -741,7 +772,7 @@ module.exports = "<p>\n  register works!\n</p>\n"
 /***/ 694:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\n<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <video-detail *ngIf=\"selectedVideo\" [video]=\"selectedVideo\"></video-detail>\n  </div>\n  <div class=\"col-sm-3\">\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\n <!-- PROPRETY_DATA_BINDING:\n      Especifica que vai haver um input de videos na video-list.\n      [videos]: ref. \"video-center.component.ts\" - \"videos\": ref. \"video-list.component.ts\" -->\n      <video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"videos\"></video-list>\n  </div>\n</div>"
+module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\n<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\n    <div *ngIf=\"!hideNewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Url</label>\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Description</label>\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\n      </form>\n    </div>\n    <video-detail *ngIf=\"selectedVideo && hideNewVideo\" [video]=\"selectedVideo\"></video-detail>\n  </div>\n  <div class=\"col-sm-3\">\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\n <!-- PROPRETY_DATA_BINDING:\n      Especifica que vai haver um input de videos na video-list.\n      [videos]: ref. \"video-center.component.ts\" - \"videos\": ref. \"video-list.component.ts\" -->\n      <video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"videos\"></video-list>\n  </div>\n</div>"
 
 /***/ }),
 
