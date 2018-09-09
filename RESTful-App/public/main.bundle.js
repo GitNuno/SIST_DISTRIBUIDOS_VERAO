@@ -440,6 +440,7 @@ var VideoCenterComponent = (function () {
     }
     // REF:\zVIDEO\.20\(min.2.30)
     // subscribe ao serviço "video.service.ts" que liga Angular com BD
+    // inicializa array(videos) com os videos existentes na BD
     VideoCenterComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._videoService.getVideos()
@@ -453,7 +454,7 @@ var VideoCenterComponent = (function () {
     // REF:\zVIDEO\.22\(min.5.00)
     // REF:\zVIDEO\.22\(min.10.00) EXPLAIN-ALL!!
     // recebe video submetido
-    // adicionar video submetido na BD
+    // adiciona video submetido na BD
     // subscribe para obter data na resposta(resNewVideo)
     // push resNewVideo no array(videos)
     VideoCenterComponent.prototype.onSubmitAddVideo = function (video) {
@@ -465,13 +466,31 @@ var VideoCenterComponent = (function () {
             _this.selectedVideo = resNewVideo;
         });
     };
-    // REF:\zVIDEO\.23\(min.3.40)
+    // REF:\zVIDEO\.23\(min.3.40, 5.30)
     VideoCenterComponent.prototype.onUpdateVideoEvent = function (video) {
         this._videoService.updateVideo(video)
             .subscribe(function (resUpdatedVideo) { return video = resUpdatedVideo; });
         // para fazer "clear" da view detail
         this.selectedVideo = null;
     };
+    ;
+    // REF:\zVIDEO\.24\(min.3.20, )
+    VideoCenterComponent.prototype.onDeleteVideoEvent = function (video) {
+        // inicializa var(videoArray) com videos da BD
+        var videoArray = this.videos;
+        // apaga video da BD
+        this._videoService.deleteVideo(video)
+            .subscribe(function (resDeletedVideo) {
+            // na resposta apaga video do array
+            for (var i = 0; i < videoArray.length; i++) {
+                if (videoArray[i]._id === video._id) {
+                    videoArray.splice(i, 1); // apaga video na pos.(i, 1) do array
+                }
+            }
+        });
+        this.selectedVideo = null;
+    };
+    ;
     // REF:\zVIDEO\.22\(min.7.00)
     // esconder/revelar form para adicionar novo video
     VideoCenterComponent.prototype.newVideo = function () {
@@ -510,7 +529,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
-// REF:\zVIDEO\.23\(min.1.30)
+// REF:\zVIDEO\.23\(min.1.30, 5.30)
+// REF:\zVIDEO\.24\(min.1.30, )
 var VideoDetailComponent = (function () {
     function VideoDetailComponent() {
         // funciona mas dá erro no VScode
@@ -519,6 +539,7 @@ var VideoDetailComponent = (function () {
         // REF:\zVIDEO\.23\(min.1.30)
         this.editTitle = false;
         this.updateVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* EventEmitter */]();
+        this.deleteVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* EventEmitter */]();
     }
     VideoDetailComponent.prototype.ngOnInit = function () {
     };
@@ -530,11 +551,15 @@ var VideoDetailComponent = (function () {
     };
     /*
       NOTA: componente video-detail é apenas responsável pela apresentação dos detalhes
-            updateVideo() vai invocar um evento que vai ser capturado no componente video-center
-            e o componente video-center vai chamar video.service.ts que faz o update na BD
+            updateVideo() e deleteVideo() vão invocar eventos que vão ser capturados
+            em video-center.componente.
+            video-center.componente vai chamar video.service.ts que faz o update na BD
     */
     VideoDetailComponent.prototype.updateVideo = function () {
         this.updateVideoEvent.emit(this.video);
+    };
+    VideoDetailComponent.prototype.deleteVideo = function () {
+        this.deleteVideoEvent.emit(this.video);
     };
     VideoDetailComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
@@ -544,7 +569,7 @@ var VideoDetailComponent = (function () {
             // funciona mas dá erro no VScode, sol. @Input() na class
             inputs: ['video'],
             // chama evento updateVideoEvent
-            outputs: ['updateVideoEvent']
+            outputs: ['updateVideoEvent', 'deleteVideoEvent']
         }), 
         __metadata('design:paramtypes', [])
     ], VideoDetailComponent);
@@ -629,11 +654,13 @@ var VideoService = (function () {
         this._http = _http;
         // REF:\zVIDEO\.20\(min.1.00)
         // preciso referenciar rota: "/api/videos" (servidor expressJs: app.js porto:3000)
-        this._getUrl = "/api/videos";
+        this._getUrl = '/api/videos';
         // REF:\zVIDEO\.22\(min.2.00)
-        this._postUrl = "/api/video";
+        this._postUrl = '/api/video';
         // REF:\zVIDEO\.23\(min.1.00)
-        this._putUrl = "/api/video/";
+        this._putUrl = '/api/video/';
+        // REF:\zVIDEO\.24\(min.1.00)
+        this._deleteUrl = '/api/video/';
     }
     VideoService.prototype.getVideos = function () {
         // captura todos os videos no pedido http.get("/api/videos")
@@ -652,6 +679,11 @@ var VideoService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers });
         return this._http.put(this._putUrl + video._id, JSON.stringify(video), options)
+            .map(function (response) { return response.json(); });
+    };
+    // update video na BD
+    VideoService.prototype.deleteVideo = function (video) {
+        return this._http.delete(this._deleteUrl + video._id)
             .map(function (response) { return response.json(); });
     };
     VideoService = __decorate([
@@ -803,14 +835,14 @@ module.exports = "<p>\n  register works!\n</p>\n"
 /***/ 694:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\n\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\n<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\n    <div *ngIf=\"!hideNewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Url</label>\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Description</label>\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\n      </form>\n    </div>\n    <!-- REF:\\zVIDEO\\.23\\(min.3.00)-->\n    <!-- $event - dá acesso a um video particular -->\n    <video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\n      *ngIf=\"selectedVideo && hideNewVideo\" \n      [video]=\"selectedVideo\">\n    </video-detail>\n  </div>\n  <div class=\"col-sm-3\">\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\n <!-- PROPRETY_DATA_BINDING:\n      Especifica que vai haver um input de videos na video-list.\n      [videos]: ref. \"video-center.component.ts\" - \"videos\": ref. \"video-list.component.ts\" -->\n      <video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"videos\"></video-list>\n  </div>\n</div>"
+module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\n\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\n<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\n    <div *ngIf=\"!hideNewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Url</label>\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Description</label>\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\n      </form>\n    </div>\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\n    <!-- updateVideoEvent: ref.video-detail. onUpdateVideoEvent: ref.video-center -->\n    <video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\n      *ngIf=\"selectedVideo && hideNewVideo\" \n      [video]=\"selectedVideo\">\n    </video-detail>\n  </div>\n  <div class=\"col-sm-3\">\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\n <!-- PROPRETY_DATA_BINDING:\n      Especifica que vai haver um input de videos na video-list.\n      [videos]: ref. \"video-center.component.ts\" - \"videos\": ref. \"video-list.component.ts\" -->\n      <video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"videos\"></video-list>\n  </div>\n</div>"
 
 /***/ }),
 
 /***/ 695:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n    </form>\n</div>\n"
+module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 5.30) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
 
 /***/ }),
 

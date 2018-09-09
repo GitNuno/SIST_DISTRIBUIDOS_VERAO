@@ -26,6 +26,7 @@ export class VideoCenterComponent implements OnInit {
   
 // REF:\zVIDEO\.20\(min.2.30)
 // subscribe ao serviço "video.service.ts" que liga Angular com BD
+// inicializa array(videos) com os videos existentes na BD
   ngOnInit() {
     this._videoService.getVideos()
       .subscribe(resVideoData => this.videos = resVideoData);
@@ -40,7 +41,7 @@ export class VideoCenterComponent implements OnInit {
   // REF:\zVIDEO\.22\(min.5.00)
   // REF:\zVIDEO\.22\(min.10.00) EXPLAIN-ALL!!
   // recebe video submetido
-  // adicionar video submetido na BD
+  // adiciona video submetido na BD
   // subscribe para obter data na resposta(resNewVideo)
   // push resNewVideo no array(videos)
   onSubmitAddVideo(video: Video) {
@@ -57,7 +58,23 @@ export class VideoCenterComponent implements OnInit {
       .subscribe(resUpdatedVideo => video = resUpdatedVideo);
     // para fazer "clear" da view detail
     this.selectedVideo = null;
-  }
+  };
+  // REF:\zVIDEO\.24\(min.3.20, 6.00)
+  onDeleteVideoEvent(video: any){
+    // inicializa var(videoArray) com videos da BD
+    let videoArray = this.videos;
+    // apaga video da BD
+    this._videoService.deleteVideo(video)
+      .subscribe(resDeletedVideo => {
+        // na resposta apaga video do array
+        for (let i = 0; i < videoArray.length; i++) {
+          if (videoArray[i]._id === video._id) {
+            videoArray.splice(i, 1); // apaga video na pos.(i, 1) do array
+          }
+        }
+      });
+    this.selectedVideo = null;
+  };
 
   // REF:\zVIDEO\.22\(min.7.00)
   // esconder/revelar form para adicionar novo video

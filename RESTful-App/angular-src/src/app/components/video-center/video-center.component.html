@@ -23,9 +23,10 @@
         <button type="submit" class="btn btn-success" >Save</button>
       </form>
     </div>
-    <!-- REF:\zVIDEO\.23\(min.3.00, 5.30)-->
-    <!-- $event - dá acesso a um video particular -->
+    <!-- REF:\zVIDEO\.23+24\(min.3.00, 5.30)-->
+    <!-- updateVideoEvent: ref.video-detail. onUpdateVideoEvent: ref.video-center -->
     <video-detail (updateVideoEvent)="onUpdateVideoEvent($event)"
+      (deleteVideoEvent)="onDeleteVideoEvent($event)"
       *ngIf="selectedVideo && hideNewVideo" 
       [video]="selectedVideo">
     </video-detail>
