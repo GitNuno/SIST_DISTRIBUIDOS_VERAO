@@ -11,6 +11,8 @@ export class VideoService {
   private _getUrl = "/api/videos";
   // REF:\zVIDEO\.22\(min.2.00)
   private _postUrl = "/api/video";
+  // REF:\zVIDEO\.23\(min.1.00)
+  private _putUrl = "/api/video/";
 
   constructor(private _http: Http) { }
 
@@ -29,4 +31,13 @@ export class VideoService {
       // a resposta obtida tem de ser mapeada como objeto json
       .map((response: Response) => response.json());
   }
+  // update video na BD
+  updateVideo(video: Video){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this._http.put(this._putUrl + video._id, JSON.stringify(video), options)
+      // a resposta obtida tem de ser mapeada como objeto json
+      .map((response: Response) => response.json());
+  }
+
 }

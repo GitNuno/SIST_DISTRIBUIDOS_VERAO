@@ -4,22 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // REF: \AUTH\.5\(min.11.30)
 import {RouterModule, Routes} from '@angular/router';
-
-// REF: \zVIDEO\15(min.02.00)
-// ARRAY DE ROTAS
-// refere qual o componente a renderizar de acordo com a rota
-const appRoutes: Routes = [
-  // rotas users
-  {path:'', component:HomeComponent},                  // path:'' - porque é home
-  {path:'register', component:RegisterComponent},
-  {path:'login', component:LoginComponent},
-  {path:'dashboard', component:DashboardComponent},
-  {path:'profile', component:ProfileComponent},
-  // rotas app-video_player
-  // exibição de video-detail e video-list sao tb nesta rota !!
-  {path:'videos', component:VideoCenterComponent}     // notar que rota não tem de ser video-center
-]
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -33,6 +17,21 @@ import { VideoDetailComponent } from './components/video-detail/video-detail.com
 // \zVIDEO\.21\(min.1.00)
 import { SafePipe } from './components/safe.pipe';
 
+// MUDAR(se houver tempo): REF:\ANGULAR-2\ANGULAR_COMPLETO\.24(min.4.00)
+// REF: \zVIDEO\15(min.02.00)
+// ARRAY DE ROTAS
+// refere qual o componente a renderizar de acordo com a rota
+const appRoutes: Routes = [
+  // rotas users
+  {path: '', component: HomeComponent},                  // path:'' - porque é home
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'profile', component: ProfileComponent},
+  // rotas app-video_player
+  // exibição de video-detail e video-list sao tb nesta rota !!
+  {path: 'videos', component: VideoCenterComponent}     // notar que rota não tem de ser video-center
+];
 
 @NgModule({
   declarations: [
@@ -52,7 +51,7 @@ import { SafePipe } from './components/safe.pipe';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]

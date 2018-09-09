@@ -1,5 +1,6 @@
 <!-- REF:\zVIDEO\.16\(min.1.00)-->
 <!-- REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!! -->
+
 <!--"Anexar" html de video-list e video-detail em video-center-->
 <div class="row">
   <div class="col-sm-9">
@@ -22,7 +23,12 @@
         <button type="submit" class="btn btn-success" >Save</button>
       </form>
     </div>
-    <video-detail *ngIf="selectedVideo && hideNewVideo" [video]="selectedVideo"></video-detail>
+    <!-- REF:\zVIDEO\.23\(min.3.00, 5.30)-->
+    <!-- $event - dá acesso a um video particular -->
+    <video-detail (updateVideoEvent)="onUpdateVideoEvent($event)"
+      *ngIf="selectedVideo && hideNewVideo" 
+      [video]="selectedVideo">
+    </video-detail>
   </div>
   <div class="col-sm-3">
   <button (click)="newVideo()" style="margin-bottom:2px;" type="button" class="btn btn-success btn-block" >Add New Video</button>

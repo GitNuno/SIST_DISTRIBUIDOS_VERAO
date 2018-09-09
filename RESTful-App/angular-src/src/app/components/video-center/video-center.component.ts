@@ -10,17 +10,17 @@ import { VideoService } from '../video.service';
   providers:[VideoService]
 })
 export class VideoCenterComponent implements OnInit {
-// REF:\zVIDEO\.17\(min.2.00)
-// before: Declaração de 4 Videos (hardcoded)
-// usado em video-center.component.html
-// array do tipo "Video"
-videos: Array <Video>;
+  // REF:\zVIDEO\.17\(min.2.00)
+  // before: Declaração de 4 Videos (hardcoded)
+  // usado em video-center.component.html
+  // array do tipo "Video"
+  videos: Array <Video>;
 
   // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
   selectedVideo: Video;
 
   // esconder form para adicionar novo video
-   hideNewVideo: boolean = true;
+  hideNewVideo: boolean = true;
 
   constructor(private _videoService: VideoService) { }
   
@@ -50,6 +50,13 @@ videos: Array <Video>;
         this.hideNewVideo = true;
         this.selectedVideo = resNewVideo;
       });
+  }
+  // REF:\zVIDEO\.23\(min.3.40, 5.30)
+  onUpdateVideoEvent(video: any){
+    this._videoService.updateVideo(video)
+      .subscribe(resUpdatedVideo => video = resUpdatedVideo);
+    // para fazer "clear" da view detail
+    this.selectedVideo = null;
   }
 
   // REF:\zVIDEO\.22\(min.7.00)

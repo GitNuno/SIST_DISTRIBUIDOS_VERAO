@@ -12,6 +12,7 @@ const api = require('./routes/api');
 const config = require('./config/database');
 
 
+
 // REF. \VIDEO\.7\(min.01.30)
 // instancia de express
 const app = express();
