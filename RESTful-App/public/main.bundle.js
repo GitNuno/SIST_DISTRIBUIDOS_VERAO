@@ -474,7 +474,7 @@ var VideoCenterComponent = (function () {
         this.selectedVideo = null;
     };
     ;
-    // REF:\zVIDEO\.24\(min.3.20, )
+    // REF:\zVIDEO\.24\(min.3.20, 6.00)
     VideoCenterComponent.prototype.onDeleteVideoEvent = function (video) {
         // inicializa var(videoArray) com videos da BD
         var videoArray = this.videos;
@@ -530,13 +530,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
 // REF:\zVIDEO\.23\(min.1.30, 5.30)
-// REF:\zVIDEO\.24\(min.1.30, )
+// REF:\zVIDEO\.24\(min.1.30, 6.00)
 var VideoDetailComponent = (function () {
     function VideoDetailComponent() {
         // funciona mas dá erro no VScode
         // @Input() video: String = '';
         // REF:\zVIDEO\.18\(min.2.30)
-        // REF:\zVIDEO\.23\(min.1.30)
+        // REF:\zVIDEO\.23+24\(min.1.30, 5.30)
         this.editTitle = false;
         this.updateVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* EventEmitter */]();
         this.deleteVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* EventEmitter */]();
@@ -657,9 +657,9 @@ var VideoService = (function () {
         this._getUrl = '/api/videos';
         // REF:\zVIDEO\.22\(min.2.00)
         this._postUrl = '/api/video';
-        // REF:\zVIDEO\.23\(min.1.00)
+        // REF:\zVIDEO\.23\(min.1.00,5.30)
         this._putUrl = '/api/video/';
-        // REF:\zVIDEO\.24\(min.1.00)
+        // REF:\zVIDEO\.24\(min.1.00,6.00)
         this._deleteUrl = '/api/video/';
     }
     VideoService.prototype.getVideos = function () {
@@ -842,7 +842,7 @@ module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\n<!-- REF:\\zVIDEO\\.18\
 /***/ 695:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 5.30) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
+module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 6.00) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
 
 /***/ }),
 

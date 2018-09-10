@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Video } from '../video';
 
 // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
 // REF:\zVIDEO\.23\(min.1.30, 5.30)
@@ -21,7 +22,7 @@ export class VideoDetailComponent implements OnInit {
   editTitle: boolean = false;
   updateVideoEvent = new EventEmitter();
   deleteVideoEvent = new EventEmitter();
-  video: any;
+  video: Video;
 
   constructor() { }
 

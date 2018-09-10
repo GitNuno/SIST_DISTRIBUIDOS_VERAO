@@ -57,6 +57,7 @@ require('./config/passport')(passport);
 // join(__dirname, 'public') - junta path "__dirname(dir-atual) com \public
 // dá a expressJs acesso á pasta \public - liga expressJs com angular
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
 
 // rota index (HOME_PAGE): raiz '/': localhost:3000/
 app.get('/', function (req, res) {
