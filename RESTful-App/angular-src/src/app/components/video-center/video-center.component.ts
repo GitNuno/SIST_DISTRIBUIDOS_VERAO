@@ -7,7 +7,7 @@ import { VideoService } from '../video.service';
   selector: 'app-video-center',
   templateUrl: './video-center.component.html',
   styleUrls: ['./video-center.component.css'],
-  providers:[VideoService]
+  providers: [VideoService]
 })
 export class VideoCenterComponent implements OnInit {
   // REF:\zVIDEO\.17\(min.2.00)
@@ -20,10 +20,10 @@ export class VideoCenterComponent implements OnInit {
   selectedVideo: Video;
 
   // esconder form para adicionar novo video
-  hideNewVideo: boolean = true;
+  hideNewVideo = true;
 
   constructor(private _videoService: VideoService) { }
-  
+
 // REF:\zVIDEO\.20\(min.2.30)
 // subscribe ao serviço "video.service.ts" que liga Angular com BD
 // inicializa array(videos) com os videos existentes na BD
@@ -55,7 +55,7 @@ export class VideoCenterComponent implements OnInit {
       });
   }
   // REF:\zVIDEO\.23\(min.3.40, 5.30)
-  onUpdateVideoEvent(video: any){
+  onUpdateVideoEvent(video: any) {
     this._videoService.updateVideo(video)
       .subscribe(resUpdatedVideo => video = resUpdatedVideo);
     // para fazer "clear" da view detail
@@ -63,7 +63,7 @@ export class VideoCenterComponent implements OnInit {
   };
 
   // REF:\zVIDEO\.24\(min.3.20, 6.00)
-  onDeleteVideoEvent(video: any){
+  onDeleteVideoEvent(video: any) {
     // inicializa var(auxArray) com videos da BD
     const auxArray = this.arrayVideos;
     // apaga video da BD
@@ -82,7 +82,7 @@ export class VideoCenterComponent implements OnInit {
 
   // REF:\zVIDEO\.22\(min.7.00)
   // esconder/revelar form para adicionar novo video
-  newVideo(){
+  newVideo() {
     this.hideNewVideo = false;
   }
 

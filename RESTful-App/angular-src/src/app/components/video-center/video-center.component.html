@@ -26,13 +26,13 @@
 
     <!-- REF:\zVIDEO\.23+24\(min.3.00, 5.30)-->
     <!-- "updateVideoEvent":video-detail.component.ts - "onUpdateVideoEvent":video-center.component.ts -->
-    <!-- ("[video]")=("inputs:['video']":video-detail.component) - não tem de ser "video" -->
+    <!-- ("[*video]")=("@Input() *video: Video;":video-detail.component) - não tem de ser "video" -->
     <!-- "selectedVideo":video-center.component.ts("selectedVideo: Video;") -->
-    <video-detail (updateVideoEvent)="onUpdateVideoEvent($event)"
+    <app-video-detail (updateVideoEvent)="onUpdateVideoEvent($event)"
       (deleteVideoEvent)="onDeleteVideoEvent($event)"
       *ngIf="selectedVideo && hideNewVideo" 
       [video]="selectedVideo">
-    </video-detail>
+    </app-video-detail>
   </div>
   <div class="col-sm-3">
 
@@ -40,10 +40,10 @@
  
  <!-- REF:\zVIDEO\.17\(min.2.00)-->
  <!-- PROPRETY_DATA_BINDING:
-          . ("[videos]")=("@Input() videos":video-list.component.ts) - não tem de ser "videos"
+          . ("[*videos]")=("@Input() *videos":video-list.component.ts) - não tem de ser "videos"
           . "arrayVideos":video-center.component.ts("arrayVideos:Array<Video>")
-          . ("Selectvideo")=("outputs:['Selectvideo']":video-list.component.ts)") - não tem de ser "Selectvideo"
+          . ("*Selectvideo")=("@Output() *Selectvideo":video-list.component.ts)") - não tem de ser "Selectvideo"
           . "onSelectedVideo($event)":video-center.component.ts("onSelectedVideo(video:any)")                                          -->
-      <video-list (Selectvideo)="onSelectedVideo($event)" [videos]="arrayVideos"></video-list>
+      <app-video-list (Selectvideo)="onSelectedVideo($event)" [videos]="arrayVideos"></app-video-list>
   </div>
 </div>

@@ -22,7 +22,7 @@ export class VideoService {
 
   constructor(private _http: Http) { }
 
-  getVideos(){
+  getVideos() {
     // captura todos os videos no pedido http.get("/api/videos")
     return this._http.get(this._getUrl)
     // a resposta obtida tem de ser mapeada como objeto json
@@ -30,7 +30,7 @@ export class VideoService {
   }
 
   // adicionar video na BD
-  addVideo(video: Video){
+  addVideo(video: Video) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
     return this._http.post(this._postUrl, JSON.stringify(video), options)
@@ -38,7 +38,7 @@ export class VideoService {
       .map((response: Response) => response.json());
   }
   // update video na BD
-  updateVideo(video: Video){
+  updateVideo(video: Video) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
     return this._http.put(this._putUrl + video._id, JSON.stringify(video), options)
@@ -46,7 +46,7 @@ export class VideoService {
       .map((response: Response) => response.json());
   }
   // update video na BD
-  deleteVideo(video: Video){
+  deleteVideo(video: Video) {
       return this._http.delete(this._deleteUrl + video._id)
       // a resposta obtida tem de ser mapeada como objeto json
       .map((response: Response) => response.json());

@@ -1,29 +1,27 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Video } from '../video';
 
 // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
 // REF:\zVIDEO\.23\(min.1.30, 5.30)
 // REF:\zVIDEO\.24\(min.1.30, 6.00)
 @Component({
-  selector: 'video-detail',
+  selector: 'app-video-detail',
   templateUrl: './video-detail.component.html',
   styleUrls: ['./video-detail.component.css'],
-  // mudar para @Input() na class
-  inputs: ['video'],
-  // chama evento updateVideoEvent
-  outputs: ['updateVideoEvent', 'deleteVideoEvent']
+  // ORIG.
+  // inputs: ['video'],
+  // outputs: ['updateVideoEvent', 'deleteVideoEvent']
 })
 export class VideoDetailComponent implements OnInit {
-  // funciona mas dá erro no VScode
-  // @Input() video: String = '';
-  // ou @Input() video: Video;
-  
+  // data-binding com video-center.component.html
+  @Input() video: Video;
   // REF:\zVIDEO\.18\(min.2.30)
   // REF:\zVIDEO\.23+24\(min.1.30, 5.30)
-  editTitle: boolean = false;
-  updateVideoEvent = new EventEmitter();
-  deleteVideoEvent = new EventEmitter();
-  video: Video;
+  @Output() updateVideoEvent = new EventEmitter();
+  @Output() deleteVideoEvent = new EventEmitter();
+  editTitle = false;
+  // ORIG. com "inputs: ['video']""
+  // video: Video;
 
   constructor() { }
 
@@ -34,21 +32,21 @@ export class VideoDetailComponent implements OnInit {
     this.editTitle = false;
   }
 
-  onTitleClick(){
+  onTitleClick() {
     this.editTitle = true;
   }
-  /* 
+  /*
     NOTA: componente video-detail é apenas responsável pela apresentação dos detalhes
-          updateVideo() e deleteVideo() vão invocar eventos que vão ser capturados 
+          updateVideo() e deleteVideo() vão invocar eventos que vão ser capturados
           em video-center.componente.
           video-center.componente vai chamar video.service.ts que faz o update na BD
   */
  // necessita "outputs:['updateVideoEvent']"
-  updateVideo(){
+  updateVideo() {
     this.updateVideoEvent.emit(this.video);
   }
 
-  deleteVideo(){
+  deleteVideo() {
     this.deleteVideoEvent.emit(this.video);
   }
 }

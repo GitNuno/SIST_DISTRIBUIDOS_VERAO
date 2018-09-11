@@ -21,7 +21,7 @@ webpackEmptyContext.id = 145;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__(156);
 
 
@@ -56,8 +56,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(333),
-            styles: [__webpack_require__(323)]
+            template: __webpack_require__(334),
+            styles: [__webpack_require__(324)]
         })
     ], AppComponent);
     return AppComponent;
@@ -192,8 +192,8 @@ var DashboardComponent = (function () {
     DashboardComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-dashboard',
-            template: __webpack_require__(334),
-            styles: [__webpack_require__(324)]
+            template: __webpack_require__(335),
+            styles: [__webpack_require__(325)]
         }),
         __metadata("design:paramtypes", [])
     ], DashboardComponent);
@@ -228,8 +228,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-home',
-            template: __webpack_require__(335),
-            styles: [__webpack_require__(325)]
+            template: __webpack_require__(336),
+            styles: [__webpack_require__(326)]
         }),
         __metadata("design:paramtypes", [])
     ], HomeComponent);
@@ -264,8 +264,8 @@ var LoginComponent = (function () {
     LoginComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-login',
-            template: __webpack_require__(336),
-            styles: [__webpack_require__(326)]
+            template: __webpack_require__(337),
+            styles: [__webpack_require__(327)]
         }),
         __metadata("design:paramtypes", [])
     ], LoginComponent);
@@ -300,8 +300,8 @@ var NavbarComponent = (function () {
     NavbarComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-navbar',
-            template: __webpack_require__(337),
-            styles: [__webpack_require__(327)]
+            template: __webpack_require__(338),
+            styles: [__webpack_require__(328)]
         }),
         __metadata("design:paramtypes", [])
     ], NavbarComponent);
@@ -336,8 +336,8 @@ var ProfileComponent = (function () {
     ProfileComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-profile',
-            template: __webpack_require__(338),
-            styles: [__webpack_require__(328)]
+            template: __webpack_require__(339),
+            styles: [__webpack_require__(329)]
         }),
         __metadata("design:paramtypes", [])
     ], ProfileComponent);
@@ -372,8 +372,8 @@ var RegisterComponent = (function () {
     RegisterComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-register',
-            template: __webpack_require__(339),
-            styles: [__webpack_require__(329)]
+            template: __webpack_require__(340),
+            styles: [__webpack_require__(330)]
         }),
         __metadata("design:paramtypes", [])
     ], RegisterComponent);
@@ -513,8 +513,8 @@ var VideoCenterComponent = (function () {
     VideoCenterComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-video-center',
-            template: __webpack_require__(340),
-            styles: [__webpack_require__(330)],
+            template: __webpack_require__(341),
+            styles: [__webpack_require__(331)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]) === "function" && _a || Object])
@@ -532,6 +532,7 @@ var VideoCenterComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video__ = __webpack_require__(168);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoDetailComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -543,19 +544,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
 // REF:\zVIDEO\.23\(min.1.30, 5.30)
 // REF:\zVIDEO\.24\(min.1.30, 6.00)
 var VideoDetailComponent = (function () {
+    // ORIG. com "inputs: ['video']""
+    // video: Video;
     function VideoDetailComponent() {
-        // funciona mas dá erro no VScode
-        // @Input() video: String = '';
-        // ou @Input() video: Video;
         // REF:\zVIDEO\.18\(min.2.30)
         // REF:\zVIDEO\.23+24\(min.1.30, 5.30)
-        this.editTitle = false;
         this.updateVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
         this.deleteVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
+        this.editTitle = false;
     }
     VideoDetailComponent.prototype.ngOnInit = function () {
     };
@@ -578,19 +579,28 @@ var VideoDetailComponent = (function () {
     VideoDetailComponent.prototype.deleteVideo = function () {
         this.deleteVideoEvent.emit(this.video);
     };
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Input */])(),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video__["a" /* Video */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__video__["a" /* Video */]) === "function" && _a || Object)
+    ], VideoDetailComponent.prototype, "video", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoDetailComponent.prototype, "updateVideoEvent", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoDetailComponent.prototype, "deleteVideoEvent", void 0);
     VideoDetailComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
-            selector: 'video-detail',
-            template: __webpack_require__(341),
-            styles: [__webpack_require__(331)],
-            // mudar para @Input() na class
-            inputs: ['video'],
-            // chama evento updateVideoEvent
-            outputs: ['updateVideoEvent', 'deleteVideoEvent']
+            selector: 'app-video-detail',
+            template: __webpack_require__(342),
+            styles: [__webpack_require__(332)],
         }),
         __metadata("design:paramtypes", [])
     ], VideoDetailComponent);
     return VideoDetailComponent;
+    var _a;
 }());
 
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-detail.component.js.map
@@ -633,14 +643,18 @@ var VideoListComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Input */])(),
         __metadata("design:type", Object)
     ], VideoListComponent.prototype, "videos", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoListComponent.prototype, "Selectvideo", void 0);
     VideoListComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
-            selector: 'video-list',
-            template: __webpack_require__(342),
-            styles: [__webpack_require__(332)],
-            outputs: ['Selectvideo']
-            // editor não reconhece, mas funciona... usei @Input() abaixo na class
+            selector: 'app-video-list',
+            template: __webpack_require__(343),
+            styles: [__webpack_require__(333)]
+            // ORIG.
             // inputs: ['videos']
+            // outputs: ['Selectvideo']
         }),
         __metadata("design:paramtypes", [])
     ], VideoListComponent);
@@ -657,7 +671,7 @@ var VideoListComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -729,6 +743,23 @@ var VideoService = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Video; });
+// REF:\zVIDEO\.17\(min.1.00)
+// mimic campos em MongoDB
+var Video = (function () {
+    function Video() {
+    }
+    return Video;
+}());
+
+//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video.js.map
+
+/***/ }),
+
+/***/ 169:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
@@ -738,13 +769,6 @@ var environment = {
     production: false
 };
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/environment.js.map
-
-/***/ }),
-
-/***/ 323:
-/***/ (function(module, exports) {
-
-module.exports = ""
 
 /***/ }),
 
@@ -814,74 +838,81 @@ module.exports = ""
 /***/ 333:
 /***/ (function(module, exports) {
 
-module.exports = "<!--\r\nOrig. - ref. app.component.ts\r\n<h1> {{title}} </h1>\r\n-->\r\n\r\n<!-- REF: \\AUTH\\.5\\(min.15.00) -->\r\n<!-- \"selector: 'app-navbar'\" - definido em \\navbar\\navbar.component.ts -->\r\n<app-navbar></app-navbar>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<div class=\"container\">\r\n    <!--Renderizar as páginas roteadas-->\r\n    <router-outlet></router-outlet>\r\n</div>\r\n\r\n"
+module.exports = ""
 
 /***/ }),
 
 /***/ 334:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  dashboard works!\n</p>\n"
+module.exports = "<!--\r\nOrig. - ref. app.component.ts\r\n<h1> {{title}} </h1>\r\n-->\r\n\r\n<!-- REF: \\AUTH\\.5\\(min.15.00) -->\r\n<!-- \"selector: 'app-navbar'\" - definido em \\navbar\\navbar.component.ts -->\r\n<app-navbar></app-navbar>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<div class=\"container\">\r\n    <!--Renderizar as páginas roteadas-->\r\n    <router-outlet></router-outlet>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ 335:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\n  <h1>HOME</h1>\n</div>\n"
+module.exports = "<p>\n  dashboard works!\n</p>\n"
 
 /***/ }),
 
 /***/ 336:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  login works!\n</p>\n"
+module.exports = "<div class=\"jumbotron\">\n  <h1>HOME</h1>\n</div>\n"
 
 /***/ }),
 
 /***/ 337:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF: \\AUTH\\.5\\(min.16.00) -->\n<!-- REF: \\zVIDEO\\.15\\(min.03.30) -->\n\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n  <a class=\"navbar-brand\" href=\"#\">VIDEO player</a> \n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n    <ul class=\"nav navbar-nav navbar-left\">\n        <!-- REF: \\zVIDEO\\.15\\(min.03.30) DIFERENTE - MUDAR(se houver tempo) !! -->\n        <!-- REF: \\ANGULAR-2\\ANGULAR_COMPLETO\\.23(min.10) - EXPLANATION!! -->\n        <!-- (/videos, /login, etc_rotas) = (rotas definidas em app.module.ts) -->\n        <li><a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a></li>\n        <li><a class=\"nav-link\" [routerLink]=\"['/vid']\">Playlist <span></span></a></li>\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n        <li><a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a></li>\n      <li><a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\n    </ul>\n  </div>\n</nav>\n\n\n<!--\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n  <div class=\"container-fluid\">\n    <div class= \"navbar-header\">\n      <a class=\"navbar-brand\" href=\"#\">VideoPlayer</a>\n    </div>\n    <ul class=\"nav navbar-nav\">\n      <li><a routerLink=\"/home\" routerLinkActive=\"active\">Home</a></li>\n      <li><a routerLink=\"/videos\" routerLinkActive=\"active\">PlayList</a></li>\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n        <li><a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a></li>\n      <li><a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\n    </ul>\n  </div>\n</nav>\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n-->"
+module.exports = "<p>\n  login works!\n</p>\n"
 
 /***/ }),
 
 /***/ 338:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  profile works!\n</p>\n"
+module.exports = "<!-- REF: \\AUTH\\.5\\(min.16.00) -->\n<!-- REF: \\zVIDEO\\.15\\(min.03.30) -->\n\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n  <a class=\"navbar-brand\" href=\"#\">VIDEO player</a> \n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n    <ul class=\"nav navbar-nav navbar-left\">\n        <!-- REF: \\zVIDEO\\.15\\(min.03.30) DIFERENTE - MUDAR(se houver tempo) !! -->\n        <!-- REF: \\ANGULAR-2\\ANGULAR_COMPLETO\\.23(min.10) - EXPLANATION!! -->\n        <!-- (/videos, /login, etc_rotas) = (rotas definidas em app.module.ts) -->\n        <li><a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a></li>\n        <li><a class=\"nav-link\" [routerLink]=\"['/vid']\">Playlist <span></span></a></li>\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n        <li><a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a></li>\n      <li><a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\n    </ul>\n  </div>\n</nav>\n\n\n<!--\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n  <div class=\"container-fluid\">\n    <div class= \"navbar-header\">\n      <a class=\"navbar-brand\" href=\"#\">VideoPlayer</a>\n    </div>\n    <ul class=\"nav navbar-nav\">\n      <li><a routerLink=\"/home\" routerLinkActive=\"active\">Home</a></li>\n      <li><a routerLink=\"/videos\" routerLinkActive=\"active\">PlayList</a></li>\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n        <li><a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a></li>\n      <li><a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\n    </ul>\n  </div>\n</nav>\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n-->"
 
 /***/ }),
 
 /***/ 339:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  register works!\n</p>\n"
+module.exports = "<p>\n  profile works!\n</p>\n"
 
 /***/ }),
 
 /***/ 340:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\r\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\r\n\r\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-9\">\r\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\r\n    <div *ngIf=\"!hideNewVideo\">\r\n      <h2>New Video</h2>\r\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\r\n        <div class=\"form-group\">\r\n          <label>Title</label>\r\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Url</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\r\n      </form>\r\n    </div>\r\n\r\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\r\n    <!-- \"updateVideoEvent\":video-detail.component.ts - \"onUpdateVideoEvent\":video-center.component.ts -->\r\n    <!-- (\"[video]\")=(\"inputs:['video']\":video-detail.component) - não tem de ser \"video\" -->\r\n    <!-- \"selectedVideo\":video-center.component.ts(\"selectedVideo: Video;\") -->\r\n    <video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\r\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\r\n      *ngIf=\"selectedVideo && hideNewVideo\" \r\n      [video]=\"selectedVideo\">\r\n    </video-detail>\r\n  </div>\r\n  <div class=\"col-sm-3\">\r\n\r\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\r\n \r\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\r\n <!-- PROPRETY_DATA_BINDING:\r\n          . (\"[videos]\")=(\"@Input() videos\":video-list.component.ts) - não tem de ser \"videos\"\r\n          . \"arrayVideos\":video-center.component.ts(\"arrayVideos:Array<Video>\")\r\n          . (\"Selectvideo\")=(\"outputs:['Selectvideo']\":video-list.component.ts)\") - não tem de ser \"Selectvideo\"\r\n          . \"onSelectedVideo($event)\":video-center.component.ts(\"onSelectedVideo(video:any)\")                                          -->\r\n      <video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"arrayVideos\"></video-list>\r\n  </div>\r\n</div>"
+module.exports = "<p>\n  register works!\n</p>\n"
 
 /***/ }),
 
 /***/ 341:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <!-- iframe limita-se a \"reproduzir\" url da BD correspondente ao video seleccionado  -->\n    url: /uploads/VAN.mp3 é permitido pq é publico:\n    <!-- [video]=\"selectedVideo\":videocenter.component.html - data-binding\n                 \"selectedVideo\": metodo que devolve objeto video seleccionado -->\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 6.00) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
+module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\r\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\r\n\r\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-9\">\r\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\r\n    <div *ngIf=\"!hideNewVideo\">\r\n      <h2>New Video</h2>\r\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\r\n        <div class=\"form-group\">\r\n          <label>Title</label>\r\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Url</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\r\n      </form>\r\n    </div>\r\n\r\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\r\n    <!-- \"updateVideoEvent\":video-detail.component.ts - \"onUpdateVideoEvent\":video-center.component.ts -->\r\n    <!-- (\"[*video]\")=(\"@Input() *video: Video;\":video-detail.component) - não tem de ser \"video\" -->\r\n    <!-- \"selectedVideo\":video-center.component.ts(\"selectedVideo: Video;\") -->\r\n    <app-video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\r\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\r\n      *ngIf=\"selectedVideo && hideNewVideo\" \r\n      [video]=\"selectedVideo\">\r\n    </app-video-detail>\r\n  </div>\r\n  <div class=\"col-sm-3\">\r\n\r\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\r\n \r\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\r\n <!-- PROPRETY_DATA_BINDING:\r\n          . (\"[*videos]\")=(\"@Input() *videos\":video-list.component.ts) - não tem de ser \"videos\"\r\n          . \"arrayVideos\":video-center.component.ts(\"arrayVideos:Array<Video>\")\r\n          . (\"*Selectvideo\")=(\"@Output() *Selectvideo\":video-list.component.ts)\") - não tem de ser \"Selectvideo\"\r\n          . \"onSelectedVideo($event)\":video-center.component.ts(\"onSelectedVideo(video:any)\")                                          -->\r\n      <app-video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"arrayVideos\"></app-video-list>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
 /***/ 342:
 /***/ (function(module, exports) {
 
+module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <!-- iframe limita-se a \"reproduzir\" url da BD correspondente ao video seleccionado  -->\n    <!-- url: /uploads/VAN.mp3 é permitido pq é publico: -->\n    <!-- [video]=\"selectedVideo\":videocenter.component.html - data-binding\n                 \"selectedVideo\": metodo que devolve objeto video seleccionado -->\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 6.00) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
+
+/***/ }),
+
+/***/ 343:
+/***/ (function(module, exports) {
+
 module.exports = "\n<!-- REF:\\zVIDEO\\.17\\(min.3.00)-->\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!!-->\n<!-- \n. Depois de fazer o binding do array_videos em video-center.component.html faz-se\n  display da lista de videos usando a diretiva *ngFor\n. \"let video of videos\" - por cada \"video\"(var) de \"videos\"(array) faço display de \"video.title\" -->\n<table class=\"table table-hover\">\n  <tbody>\n   <!-- onSelect(video) invoca evento que vai ser capturado em video-center.component -->\n    <tr (click)=\"onSelect(video)\" *ngFor=\"let video of videos\">\n      <td>\n          {{video.title}}\n      </td>\n    </tr>\n  </tbody>\n</table>\n\n\n\n<!-- <ul class=\"nav nav-pills flex-column  \">\n  <li class=\"nav-item\" (click)=\"onSelect(video)\" *ngFor=\"let video of videos\">\n    <a >{{video.title}}</a>\n  </li>\n</ul> -->"
 
 /***/ }),
 
-/***/ 388:
+/***/ 389:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(146);
@@ -889,5 +920,5 @@ module.exports = __webpack_require__(146);
 
 /***/ })
 
-},[388]);
+},[389]);
 //# sourceMappingURL=main.bundle.map
