@@ -10,5 +10,7 @@
 			"path": "C:\\Users\\Nuno\\Documents\\_MY_PROJECTS\\GIT_CLONES\\youtube-file-upload-download"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "youtube-file-upload-download"
+	}
 }

@@ -4,14 +4,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
+
+// Rotas - imports
 // procurar users em ./routes/users.js
 const users = require('./routes/users');
 // procurar api em ./routes/api.js
 const api = require('./routes/api');
 // config BD em ./config/database.js
 const config = require('./config/database');
-
-
 
 // REF. \VIDEO\.7\(min.01.30)
 // instancia de express
@@ -55,11 +55,12 @@ require('./config/passport')(passport);
 // REF: \NODE_JS\1-TRAVERSY MEDIA\2-ExpressJs-Static_Files(min.02.30)
 // tem de estar acima de: app.get('/',...)
 // join(__dirname, 'public') - junta path "__dirname(dir-atual) com \public
-// dá a expressJs acesso á pasta \public - liga expressJs com angular
+// dá a expressJs acesso á pasta \public - permite ligar expressJs com angular
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
+// orig: '/uploads' obrigava-me no url do formulario escrever: Ex:"/uploads/Van.mp3"
+app.use('/',express.static(path.join(__dirname, 'uploads')));
 
-// rota index (HOME_PAGE): raiz '/': localhost:3000/
+// rota qd n
 app.get('/', function (req, res) {
     res.send('End-point Inválido!!!!');
 });
@@ -70,6 +71,7 @@ app.get('/', function (req, res) {
 // qualquer outra rota != ´users´, expressJs procura em /public/index.html
 app.use('/users', users);
 // usamos /api para todas as rotas api(videoPlayer-app)
+// todos os pedidos "/api" procurar em ./routes/api.js
 app.use('/api', api);
 
 // listen: inicia servidor na porta 3000

@@ -3,11 +3,15 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Video } from './video';
 
+// Nos serviços crio metodos que fazem os pedidos via objeto Http
+// Ex: capturo dados via http.get(/api/videos)
+// "/api/videos" é a rota para servidor expressJs: app.js porto:3000
 @Injectable()
 export class VideoService {
 
   // REF:\zVIDEO\.20\(min.1.00)
-  // preciso referenciar rota: "/api/videos" (servidor expressJs: app.js porto:3000)
+  // rotas = \routes\api.js : para chamar servidor expressJs: Ex: http://localhost:3000/api/videos
+  // notar que "putUrl = '/api/video/" termina com "/" pq em \routes\api.js temos: "router.put('/videos/:id',..)"
   private _getUrl = '/api/videos';
   // REF:\zVIDEO\.22\(min.2.00)
   private _postUrl = '/api/video';
@@ -27,16 +31,16 @@ export class VideoService {
 
   // adicionar video na BD
   addVideo(video: Video){
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
     return this._http.post(this._postUrl, JSON.stringify(video), options)
       // a resposta obtida tem de ser mapeada como objeto json
       .map((response: Response) => response.json());
   }
   // update video na BD
   updateVideo(video: Video){
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
     return this._http.put(this._putUrl + video._id, JSON.stringify(video), options)
       // a resposta obtida tem de ser mapeada como objeto json
       .map((response: Response) => response.json());

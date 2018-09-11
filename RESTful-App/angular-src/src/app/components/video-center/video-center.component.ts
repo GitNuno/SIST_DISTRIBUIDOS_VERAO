@@ -14,7 +14,7 @@ export class VideoCenterComponent implements OnInit {
   // before: Declaração de 4 Videos (hardcoded)
   // usado em video-center.component.html
   // array do tipo "Video"
-  videos: Array <Video>;
+  arrayVideos: Array <Video>;
 
   // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
   selectedVideo: Video;
@@ -29,10 +29,12 @@ export class VideoCenterComponent implements OnInit {
 // inicializa array(videos) com os videos existentes na BD
   ngOnInit() {
     this._videoService.getVideos()
-      .subscribe(resVideoData => this.videos = resVideoData);
+      .subscribe(resVideoData => this.arrayVideos = resVideoData);
   }
 
-  onSelectedVideo(video:any){
+  // usado em video-center.component.html
+  // captura objeto "video" seleccionado via video-list.component
+  onSelectedVideo(video: Video) {
     this.selectedVideo = video;
     this.hideNewVideo = true;
     console.log(this.selectedVideo);
@@ -47,7 +49,7 @@ export class VideoCenterComponent implements OnInit {
   onSubmitAddVideo(video: Video) {
     this._videoService.addVideo(video)
       .subscribe(resNewVideo => {
-        this.videos.push(resNewVideo);
+        this.arrayVideos.push(resNewVideo);
         this.hideNewVideo = true;
         this.selectedVideo = resNewVideo;
       });
@@ -59,17 +61,19 @@ export class VideoCenterComponent implements OnInit {
     // para fazer "clear" da view detail
     this.selectedVideo = null;
   };
+
   // REF:\zVIDEO\.24\(min.3.20, 6.00)
   onDeleteVideoEvent(video: any){
-    // inicializa var(videoArray) com videos da BD
-    let videoArray = this.videos;
+    // inicializa var(auxArray) com videos da BD
+    const auxArray = this.arrayVideos;
     // apaga video da BD
     this._videoService.deleteVideo(video)
       .subscribe(resDeletedVideo => {
         // na resposta apaga video do array
-        for (let i = 0; i < videoArray.length; i++) {
-          if (videoArray[i]._id === video._id) {
-            videoArray.splice(i, 1); // apaga video na pos.(i, 1) do array
+        // nota: video já não existe na BD é para atualizar UI
+        for (let i = 0; i < auxArray.length; i++) {
+          if (auxArray[i]._id === video._id) {
+            auxArray.splice(i, 1); // apaga video na pos.(i, 1) do array
           }
         }
       });

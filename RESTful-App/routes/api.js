@@ -18,6 +18,8 @@ const Video = require('../models/video');
 //   para o browser (ficheiro json)
 // NÃO ESQUECWER DE REFERENCIAR videoplayer(BD) EM /config/database.js !!!
 // Capturar collection:videos de RestfulBD em localhost:3000/api/videos
+// '/xxx' pode ser qualquer é o que colocamos no browser para chamar "/api/xxx" servidor expressJs
+// não confundir com por Ex: localhost:3000/videos - este é o endç-Angular def. em \app\app.module.ts
 router.get('/videos', function(req, res){
     console.log('Get request for all videos');
     // .find() função de mongoose

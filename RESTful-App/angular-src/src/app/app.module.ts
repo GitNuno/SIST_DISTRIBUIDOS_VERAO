@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'; 
 // REF: \AUTH\.5\(min.11.30)
 import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
@@ -20,7 +21,9 @@ import { SafePipe } from './components/safe.pipe';
 // MUDAR(se houver tempo): REF:\ANGULAR-2\ANGULAR_COMPLETO\.24(min.4.00)
 // REF: \zVIDEO\15(min.02.00)
 // ARRAY DE ROTAS
+// "app.module" é o modulo principal a ser chamado
 // refere qual o componente a renderizar de acordo com a rota
+// endç. localhost:3000/xxx: "/xxx" é definido aqui!
 const appRoutes: Routes = [
   // rotas users
   {path: '', component: HomeComponent},                  // path:'' - porque é home
@@ -30,7 +33,8 @@ const appRoutes: Routes = [
   {path: 'profile', component: ProfileComponent},
   // rotas app-video_player
   // exibição de video-detail e video-list sao tb nesta rota !!
-  {path: 'videos', component: VideoCenterComponent}     // notar que rota não tem de ser video-center
+  // endç. localhost:3000/videos: "/videos" é definido aqui!
+  {path: 'vid', component: VideoCenterComponent}
 ];
 
 @NgModule({
@@ -51,6 +55,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   providers: [],

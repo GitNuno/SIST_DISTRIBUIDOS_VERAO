@@ -8,7 +8,7 @@ import { Video } from '../video';
   selector: 'video-detail',
   templateUrl: './video-detail.component.html',
   styleUrls: ['./video-detail.component.css'],
-  // funciona mas dá erro no VScode, sol. @Input() na class
+  // mudar para @Input() na class
   inputs: ['video'],
   // chama evento updateVideoEvent
   outputs: ['updateVideoEvent', 'deleteVideoEvent']
@@ -16,6 +16,7 @@ import { Video } from '../video';
 export class VideoDetailComponent implements OnInit {
   // funciona mas dá erro no VScode
   // @Input() video: String = '';
+  // ou @Input() video: Video;
   
   // REF:\zVIDEO\.18\(min.2.30)
   // REF:\zVIDEO\.23+24\(min.1.30, 5.30)
@@ -42,6 +43,7 @@ export class VideoDetailComponent implements OnInit {
           em video-center.componente.
           video-center.componente vai chamar video.service.ts que faz o update na BD
   */
+ // necessita "outputs:['updateVideoEvent']"
   updateVideo(){
     this.updateVideoEvent.emit(this.video);
   }

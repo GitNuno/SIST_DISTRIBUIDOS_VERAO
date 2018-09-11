@@ -1,8 +1,13 @@
 
 <!-- REF:\zVIDEO\.17\(min.3.00)-->
 <!-- REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!-->
+<!-- 
+. Depois de fazer o binding do array_videos em video-center.component.html faz-se
+  display da lista de videos usando a diretiva *ngFor
+. "let video of videos" - por cada "video"(var) de "videos"(array) faço display de "video.title" -->
 <table class="table table-hover">
   <tbody>
+   <!-- onSelect(video) invoca evento que vai ser capturado em video-center.component -->
     <tr (click)="onSelect(video)" *ngFor="let video of videos">
       <td>
           {{video.title}}
@@ -12,11 +17,7 @@
 </table>
 
 
-<!-- 
-  . Depois de fazer o binding do array_videos em video-center.component.html faz-se:
-    Display da lista de videos usando a diretiva *ngFor
-  . "let video of videos" - por cada "video"(var) de "videos"(array) faço display de "video.title"
--->
+
 <!-- <ul class="nav nav-pills flex-column  ">
   <li class="nav-item" (click)="onSelect(video)" *ngFor="let video of videos">
     <a >{{video.title}}</a>
