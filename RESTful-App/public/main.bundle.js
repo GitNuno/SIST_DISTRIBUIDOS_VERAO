@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 389:
+/***/ 142:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,20 +9,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 389;
+webpackEmptyContext.id = 142;
 
 
 /***/ }),
 
-/***/ 390:
+/***/ 143:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(478);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__(152);
 
 
 
@@ -35,20 +35,17 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 509:
+/***/ 151:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 // decorador
@@ -57,39 +54,39 @@ var AppComponent = (function () {
         this.title = 'app works!';
     }
     AppComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(687),
-            styles: [__webpack_require__(677)]
-        }), 
-        __metadata('design:paramtypes', [])
+            template: __webpack_require__(329),
+            styles: [__webpack_require__(319)]
+        })
     ], AppComponent);
     return AppComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/app.component.js.map
 
 /***/ }),
 
-/***/ 510:
+/***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(498);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__ = __webpack_require__(516);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__(515);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_video_center_video_center_component__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_video_list_video_list_component__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_video_detail_video_detail_component__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_safe_pipe__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_video_center_video_center_component__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_video_list_video_list_component__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_video_detail_video_detail_component__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_safe_pipe__ = __webpack_require__(159);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -97,9 +94,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+
+
+
+
+// REF: \AUTH\.5\(min.11.30)
 
 
 
@@ -111,10 +110,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-
+// \zVIDEO\.21\(min.1.00)
 
 // MUDAR(se houver tempo): REF:\ANGULAR-2\ANGULAR_COMPLETO\.24(min.4.00)
 // REF: \zVIDEO\15(min.02.00)
@@ -157,20 +153,20 @@ var AppModule = (function () {
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], AppModule);
     return AppModule;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/app.module.js.map
 
 /***/ }),
 
-/***/ 511:
+/***/ 153:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -188,24 +184,25 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.ngOnInit = function () {
     };
     DashboardComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-dashboard',
-            template: __webpack_require__(688),
-            styles: [__webpack_require__(678)]
-        }), 
-        __metadata('design:paramtypes', [])
+            template: __webpack_require__(330),
+            styles: [__webpack_require__(320)]
+        }),
+        __metadata("design:paramtypes", [])
     ], DashboardComponent);
     return DashboardComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/dashboard.component.js.map
 
 /***/ }),
 
-/***/ 512:
+/***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -223,24 +220,25 @@ var HomeComponent = (function () {
     HomeComponent.prototype.ngOnInit = function () {
     };
     HomeComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-home',
-            template: __webpack_require__(689),
-            styles: [__webpack_require__(679)]
-        }), 
-        __metadata('design:paramtypes', [])
+            template: __webpack_require__(331),
+            styles: [__webpack_require__(321)]
+        }),
+        __metadata("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/home.component.js.map
 
 /***/ }),
 
-/***/ 513:
+/***/ 155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -258,24 +256,25 @@ var LoginComponent = (function () {
     LoginComponent.prototype.ngOnInit = function () {
     };
     LoginComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-login',
-            template: __webpack_require__(690),
-            styles: [__webpack_require__(680)]
-        }), 
-        __metadata('design:paramtypes', [])
+            template: __webpack_require__(332),
+            styles: [__webpack_require__(322)]
+        }),
+        __metadata("design:paramtypes", [])
     ], LoginComponent);
     return LoginComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/login.component.js.map
 
 /***/ }),
 
-/***/ 514:
+/***/ 156:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -293,24 +292,25 @@ var NavbarComponent = (function () {
     NavbarComponent.prototype.ngOnInit = function () {
     };
     NavbarComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-navbar',
-            template: __webpack_require__(691),
-            styles: [__webpack_require__(681)]
-        }), 
-        __metadata('design:paramtypes', [])
+            template: __webpack_require__(333),
+            styles: [__webpack_require__(323)]
+        }),
+        __metadata("design:paramtypes", [])
     ], NavbarComponent);
     return NavbarComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/navbar.component.js.map
 
 /***/ }),
 
-/***/ 515:
+/***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -328,24 +328,25 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.ngOnInit = function () {
     };
     ProfileComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-profile',
-            template: __webpack_require__(692),
-            styles: [__webpack_require__(682)]
-        }), 
-        __metadata('design:paramtypes', [])
+            template: __webpack_require__(334),
+            styles: [__webpack_require__(324)]
+        }),
+        __metadata("design:paramtypes", [])
     ], ProfileComponent);
     return ProfileComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/profile.component.js.map
 
 /***/ }),
 
-/***/ 516:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -363,25 +364,26 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.ngOnInit = function () {
     };
     RegisterComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-register',
-            template: __webpack_require__(693),
-            styles: [__webpack_require__(683)]
-        }), 
-        __metadata('design:paramtypes', [])
+            template: __webpack_require__(335),
+            styles: [__webpack_require__(325)]
+        }),
+        __metadata("design:paramtypes", [])
     ], RegisterComponent);
     return RegisterComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/register.component.js.map
 
 /***/ }),
 
-/***/ 517:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SafePipe; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -402,24 +404,27 @@ var SafePipe = (function () {
         return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     };
     SafePipe = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Pipe */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Pipe */])({
             name: 'safe'
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === 'function' && _a) || Object])
+        })
+        // \zVIDEO\.21\(min.1.00)
+        ,
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _a || Object])
     ], SafePipe);
     return SafePipe;
     var _a;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/safe.pipe.js.map
 
 /***/ }),
 
-/***/ 518:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video_service__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video_service__ = __webpack_require__(163);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoCenterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -497,26 +502,27 @@ var VideoCenterComponent = (function () {
         this.hideNewVideo = false;
     };
     VideoCenterComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'app-video-center',
-            template: __webpack_require__(694),
-            styles: [__webpack_require__(684)],
+            template: __webpack_require__(336),
+            styles: [__webpack_require__(326)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]]
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]) === 'function' && _a) || Object])
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]) === "function" && _a || Object])
     ], VideoCenterComponent);
     return VideoCenterComponent;
     var _a;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-center.component.js.map
 
 /***/ }),
 
-/***/ 519:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoDetailComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -538,8 +544,8 @@ var VideoDetailComponent = (function () {
         // REF:\zVIDEO\.18\(min.2.30)
         // REF:\zVIDEO\.23+24\(min.1.30, 5.30)
         this.editTitle = false;
-        this.updateVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* EventEmitter */]();
-        this.deleteVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* EventEmitter */]();
+        this.updateVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
+        this.deleteVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
     }
     VideoDetailComponent.prototype.ngOnInit = function () {
     };
@@ -562,28 +568,29 @@ var VideoDetailComponent = (function () {
         this.deleteVideoEvent.emit(this.video);
     };
     VideoDetailComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'video-detail',
-            template: __webpack_require__(695),
-            styles: [__webpack_require__(685)],
+            template: __webpack_require__(337),
+            styles: [__webpack_require__(327)],
             // funciona mas dá erro no VScode, sol. @Input() na class
             inputs: ['video'],
             // chama evento updateVideoEvent
             outputs: ['updateVideoEvent', 'deleteVideoEvent']
-        }), 
-        __metadata('design:paramtypes', [])
+        }),
+        __metadata("design:paramtypes", [])
     ], VideoDetailComponent);
     return VideoDetailComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-detail.component.js.map
 
 /***/ }),
 
-/***/ 520:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -600,7 +607,7 @@ var VideoListComponent = (function () {
     function VideoListComponent() {
         this.videos = '';
         // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
-        this.Selectvideo = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* EventEmitter */]();
+        this.Selectvideo = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
     }
     VideoListComponent.prototype.ngOnInit = function () {
     };
@@ -610,31 +617,34 @@ var VideoListComponent = (function () {
         // console.log(JSON.stringify(vid));
     };
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* Input */])(), 
-        __metadata('design:type', Object)
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Input */])(),
+        __metadata("design:type", Object)
     ], VideoListComponent.prototype, "videos", void 0);
     VideoListComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
             selector: 'video-list',
-            template: __webpack_require__(696),
-            styles: [__webpack_require__(686)],
+            template: __webpack_require__(338),
+            styles: [__webpack_require__(328)],
             outputs: ['Selectvideo']
-        }), 
-        __metadata('design:paramtypes', [])
+            // editor não reconhece, mas funciona... usei @Input() abaixo na class
+            // inputs: ['videos']
+        }),
+        __metadata("design:paramtypes", [])
     ], VideoListComponent);
     return VideoListComponent;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-list.component.js.map
 
 /***/ }),
 
-/***/ 521:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -687,17 +697,18 @@ var VideoService = (function () {
             .map(function (response) { return response.json(); });
     };
     VideoService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === 'function' && _a) || Object])
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
     ], VideoService);
     return VideoService;
     var _a;
 }());
+
 //# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video.service.js.map
 
 /***/ }),
 
-/***/ 522:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -713,153 +724,153 @@ var environment = {
 
 /***/ }),
 
-/***/ 677:
+/***/ 319:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 678:
+/***/ 320:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 679:
+/***/ 321:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 680:
+/***/ 322:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 681:
+/***/ 323:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 682:
+/***/ 324:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 683:
+/***/ 325:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 684:
+/***/ 326:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 685:
+/***/ 327:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 686:
+/***/ 328:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ 687:
+/***/ 329:
 /***/ (function(module, exports) {
 
-module.exports = "<!--\nOrig. - ref. app.component.ts\n<h1> {{title}} </h1>\n-->\n\n<!-- REF: \\AUTH\\.5\\(min.15.00) -->\n<!-- \"selector: 'app-navbar'\" - definido em \\navbar\\navbar.component.ts -->\n<app-navbar></app-navbar>\n<br>\n<br>\n<br>\n<br>\n<div class=\"container\">\n    <!--Renderizar as páginas roteadas-->\n    <router-outlet></router-outlet>\n</div>\n\n"
+module.exports = "<!--\r\nOrig. - ref. app.component.ts\r\n<h1> {{title}} </h1>\r\n-->\r\n\r\n<!-- REF: \\AUTH\\.5\\(min.15.00) -->\r\n<!-- \"selector: 'app-navbar'\" - definido em \\navbar\\navbar.component.ts -->\r\n<app-navbar></app-navbar>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<div class=\"container\">\r\n    <!--Renderizar as páginas roteadas-->\r\n    <router-outlet></router-outlet>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
-/***/ 688:
+/***/ 330:
 /***/ (function(module, exports) {
 
 module.exports = "<p>\n  dashboard works!\n</p>\n"
 
 /***/ }),
 
-/***/ 689:
+/***/ 331:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"jumbotron\">\n  <h1>HOME</h1>\n</div>\n"
 
 /***/ }),
 
-/***/ 690:
+/***/ 332:
 /***/ (function(module, exports) {
 
 module.exports = "<p>\n  login works!\n</p>\n"
 
 /***/ }),
 
-/***/ 691:
+/***/ 333:
 /***/ (function(module, exports) {
 
 module.exports = "<!-- REF: \\AUTH\\.5\\(min.16.00) -->\n<!-- REF: \\zVIDEO\\.15\\(min.03.30) -->\n\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n  <a class=\"navbar-brand\" href=\"#\">VIDEO player</a> \n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n    <ul class=\"nav navbar-nav navbar-left\">\n        <!-- REF: \\zVIDEO\\.15\\(min.03.30) DIFERENTE - MUDAR(se houver tempo) !! -->\n        <!-- REF: \\ANGULAR-2\\ANGULAR_COMPLETO\\.23(min.10) - EXPLANATION!! -->\n        <li><a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a></li>\n        <li><a class=\"nav-link\" [routerLink]=\"['/videos']\">Playlist <span></span></a></li>\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n        <li><a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a></li>\n      <li><a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\n    </ul>\n  </div>\n</nav>\n\n\n<!--\n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n  <div class=\"container-fluid\">\n    <div class= \"navbar-header\">\n      <a class=\"navbar-brand\" href=\"#\">VideoPlayer</a>\n    </div>\n    <ul class=\"nav navbar-nav\">\n      <li><a routerLink=\"/home\" routerLinkActive=\"active\">Home</a></li>\n      <li><a routerLink=\"/videos\" routerLinkActive=\"active\">PlayList</a></li>\n    </ul>\n    <ul class=\"navbar-nav ml-auto\">\n        <li><a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a></li>\n      <li><a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a></li>\n    </ul>\n  </div>\n</nav>\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n-->"
 
 /***/ }),
 
-/***/ 692:
+/***/ 334:
 /***/ (function(module, exports) {
 
 module.exports = "<p>\n  profile works!\n</p>\n"
 
 /***/ }),
 
-/***/ 693:
+/***/ 335:
 /***/ (function(module, exports) {
 
 module.exports = "<p>\n  register works!\n</p>\n"
 
 /***/ }),
 
-/***/ 694:
+/***/ 336:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\n\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\n<div class=\"row\">\n  <div class=\"col-sm-9\">\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\n    <div *ngIf=\"!hideNewVideo\">\n      <h2>New Video</h2>\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\n        <div class=\"form-group\">\n          <label>Title</label>\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Url</label>\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\n        </div>\n        <div class=\"form-group\">\n            <label>Description</label>\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\n      </form>\n    </div>\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\n    <!-- updateVideoEvent: ref.video-detail. onUpdateVideoEvent: ref.video-center -->\n    <video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\n      *ngIf=\"selectedVideo && hideNewVideo\" \n      [video]=\"selectedVideo\">\n    </video-detail>\n  </div>\n  <div class=\"col-sm-3\">\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\n <!-- PROPRETY_DATA_BINDING:\n      Especifica que vai haver um input de videos na video-list.\n      [videos]: ref. \"video-center.component.ts\" - \"videos\": ref. \"video-list.component.ts\" -->\n      <video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"videos\"></video-list>\n  </div>\n</div>"
+module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\r\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\r\n\r\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-9\">\r\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\r\n    <div *ngIf=\"!hideNewVideo\">\r\n      <h2>New Video</h2>\r\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\r\n        <div class=\"form-group\">\r\n          <label>Title</label>\r\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Url</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\r\n      </form>\r\n    </div>\r\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\r\n    <!-- updateVideoEvent: ref.video-detail. onUpdateVideoEvent: ref.video-center -->\r\n    <video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\r\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\r\n      *ngIf=\"selectedVideo && hideNewVideo\" \r\n      [video]=\"selectedVideo\">\r\n    </video-detail>\r\n  </div>\r\n  <div class=\"col-sm-3\">\r\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\r\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\r\n <!-- PROPRETY_DATA_BINDING:\r\n      Especifica que vai haver um input de videos na video-list.\r\n      [videos]: ref. \"video-center.component.ts\" - \"videos\": ref. \"video-list.component.ts\" -->\r\n      <video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"videos\"></video-list>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
-/***/ 695:
+/***/ 337:
 /***/ (function(module, exports) {
 
 module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 6.00) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
 
 /***/ }),
 
-/***/ 696:
+/***/ 338:
 /***/ (function(module, exports) {
 
 module.exports = "\n<!-- REF:\\zVIDEO\\.17\\(min.3.00)-->\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!!-->\n<table class=\"table table-hover\">\n  <tbody>\n    <tr (click)=\"onSelect(video)\" *ngFor=\"let video of videos\">\n      <td>\n          {{video.title}}\n      </td>\n    </tr>\n  </tbody>\n</table>\n\n\n<!-- \n  . Depois de fazer o binding do array_videos em video-center.component.html faz-se:\n    Display da lista de videos usando a diretiva *ngFor\n  . \"let video of videos\" - por cada \"video\"(var) de \"videos\"(array) faço display de \"video.title\"\n-->\n<!-- <ul class=\"nav nav-pills flex-column  \">\n  <li class=\"nav-item\" (click)=\"onSelect(video)\" *ngFor=\"let video of videos\">\n    <a >{{video.title}}</a>\n  </li>\n</ul> -->"
 
 /***/ }),
 
-/***/ 729:
+/***/ 387:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(390);
+module.exports = __webpack_require__(143);
 
 
 /***/ })
 
-},[729]);
+},[387]);
 //# sourceMappingURL=main.bundle.map
