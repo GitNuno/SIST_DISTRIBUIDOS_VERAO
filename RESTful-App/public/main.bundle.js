@@ -549,7 +549,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // REF:\zVIDEO\.23\(min.1.30, 5.30)
 // REF:\zVIDEO\.24\(min.1.30, 6.00)
 var VideoDetailComponent = (function () {
-    // ORIG. com "inputs: ['video']""
+    // ORIG. qd "inputs: ['video']""
     // video: Video;
     function VideoDetailComponent() {
         // REF:\zVIDEO\.18\(min.2.30)

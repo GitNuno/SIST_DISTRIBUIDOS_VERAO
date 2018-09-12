@@ -20,7 +20,7 @@ export class VideoDetailComponent implements OnInit {
   @Output() updateVideoEvent = new EventEmitter();
   @Output() deleteVideoEvent = new EventEmitter();
   editTitle = false;
-  // ORIG. com "inputs: ['video']""
+  // ORIG. qd "inputs: ['video']""
   // video: Video;
 
   constructor() { }

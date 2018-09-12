@@ -2,6 +2,8 @@
 // Todos os pedidos á BD serão atendidos nas rotas
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'});
 // const mongoose = require('mongoose'); - BD é chamada no arranque em app.js
 
 // importar modelo video.js
@@ -36,7 +38,7 @@ router.get('/videos', function(req, res){
 // id - passado no url
 // req.params.id - o objeto req tem um parametro "id"
 // function(err, video) - parametros(err,video) podem tomar qq designação são nomes de variáveis
-router.get('/videos/:id', function(req, res){
+router.get('/video/:id', function(req, res){
     console.log('Get request for a single video');
     // .findById() função de mongoose
     Video.findById(req.params.id)
@@ -51,8 +53,9 @@ router.get('/videos/:id', function(req, res){
 
 // REF:\zVIDEO\.12\(min.1.00)
 // ** INSERT/CREATE
+// ** UPLOAD - REF:\TRABALHOS\UPLOADS\.1\(min.2.30)
 // notar que a rota é api/video e não api/videos
-router.post('/video', function(req, res){
+router.post('/video', upload.single('file'), function(req, res){
     console.log('Posting a video');
     // criar video com VideoModel
     var newVideo = new Video();
