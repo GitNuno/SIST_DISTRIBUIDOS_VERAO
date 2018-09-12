@@ -3,8 +3,23 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const upload = multer({dest: 'uploads/'});
 // const mongoose = require('mongoose'); - BD é chamada no arranque em app.js
+
+// ** UPLOAD - REF:\TRABALHOS\UPLOADS\.1\(min.9.30)
+const storage = multer.diskStorage({
+    // multer executa estas funções de cada vez que recebe 1 ficheiro
+    destination: function(req, file, cb) {
+    // './uploads/' path onde queremos o upload
+      cb(null, './uploads/');
+    },
+    filename: function(req, file, cb) {
+    // ORIG.:
+    //   cb(null, new Date().toISOString() + file.originalname);
+      cb(null, file.originalname);
+    }
+  });
+
+const upload = multer({storage: storage});
 
 // importar modelo video.js
 const Video = require('../models/video');
