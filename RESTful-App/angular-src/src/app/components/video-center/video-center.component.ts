@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-
-
 
 @Component({
   selector: 'app-video-center',
@@ -17,6 +14,7 @@ export class VideoCenterComponent implements OnInit {
   // usado em video-center.component.html
   // array do tipo "Video"
   arrayVideos: Array <Video>;
+
   // UPLOAD+++
   filesToUpload: Array<File> = [];
 
@@ -26,28 +24,8 @@ export class VideoCenterComponent implements OnInit {
   // esconder form para adicionar novo video
   hideNewVideo = true;
 
-  // ++private http: Http
-  constructor(private _videoService: VideoService, private http: Http) { }
-
-  // UPLOAD+++
-  upload() {
-    const formData: any = new FormData();
-    const files: Array<File> = this.filesToUpload;
-    console.log(files);
-
-    for(let i =0; i < files.length; i++){
-        formData.append('uploads[]', files[i], files[i]['name']);
-    }
-    console.log('form data variable :   '+ formData.toString());
-    this.http.post('http://localhost:3000/api/upload', formData)
-        .map(files => files.json())
-        .subscribe(files => console.log('files', files))
-}
-
-fileChangeEvent(fileInput: any) {
-    this.filesToUpload = <Array<File>>fileInput.target.files;
-    //this.product.photo = fileInput.target.files[0]['name'];
-}
+  
+  constructor(private _videoService: VideoService) { }
 
 // REF:\zVIDEO\.20\(min.2.30)
 // subscribe ao serviço "video.service.ts" que liga Angular com BD
@@ -56,6 +34,15 @@ fileChangeEvent(fileInput: any) {
     this._videoService.getVideos()
       .subscribe(resVideoData => this.arrayVideos = resVideoData);
   }
+
+  // UPLOAD+++
+  onUpload() {
+    this._videoService.upload();
+ }
+ //
+  onFileChangeEvent(fileInput: any) {
+    this._videoService.fileChangeEvent(fileInput);
+  };
 
   // usado em video-center.component.html
   // captura objeto "video" seleccionado via video-list.component

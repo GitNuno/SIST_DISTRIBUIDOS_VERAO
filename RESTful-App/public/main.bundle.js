@@ -74,7 +74,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(155);
@@ -431,7 +431,6 @@ var SafePipe = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video_service__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoCenterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -444,34 +443,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var VideoCenterComponent = (function () {
-    // ++private http: Http
-    function VideoCenterComponent(_videoService, http) {
+    function VideoCenterComponent(_videoService) {
         this._videoService = _videoService;
-        this.http = http;
         // UPLOAD+++
         this.filesToUpload = [];
         // esconder form para adicionar novo video
         this.hideNewVideo = true;
     }
-    // UPLOAD+++
-    VideoCenterComponent.prototype.upload = function () {
-        var formData = new FormData();
-        var files = this.filesToUpload;
-        console.log(files);
-        for (var i = 0; i < files.length; i++) {
-            formData.append('uploads[]', files[i], files[i]['name']);
-        }
-        console.log('form data variable :   ' + formData.toString());
-        this.http.post('http://localhost:3000/api/upload', formData)
-            .map(function (files) { return files.json(); })
-            .subscribe(function (files) { return console.log('files', files); });
-    };
-    VideoCenterComponent.prototype.fileChangeEvent = function (fileInput) {
-        this.filesToUpload = fileInput.target.files;
-        //this.product.photo = fileInput.target.files[0]['name'];
-    };
     // REF:\zVIDEO\.20\(min.2.30)
     // subscribe ao serviço "video.service.ts" que liga Angular com BD
     // inicializa array(videos) com os videos existentes na BD
@@ -480,6 +459,15 @@ var VideoCenterComponent = (function () {
         this._videoService.getVideos()
             .subscribe(function (resVideoData) { return _this.arrayVideos = resVideoData; });
     };
+    // UPLOAD+++
+    VideoCenterComponent.prototype.onUpload = function () {
+        this._videoService.upload();
+    };
+    //
+    VideoCenterComponent.prototype.onFileChangeEvent = function (fileInput) {
+        this._videoService.fileChangeEvent(fileInput);
+    };
+    ;
     // usado em video-center.component.html
     // captura objeto "video" seleccionado via video-list.component
     VideoCenterComponent.prototype.onSelectedVideo = function (video) {
@@ -540,10 +528,10 @@ var VideoCenterComponent = (function () {
             styles: [__webpack_require__(331)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]) === "function" && _a || Object])
     ], VideoCenterComponent);
     return VideoCenterComponent;
-    var _a, _b;
+    var _a;
 }());
 
 //# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-center.component.js.map
@@ -693,7 +681,7 @@ var VideoListComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoService; });
@@ -725,7 +713,30 @@ var VideoService = (function () {
         this._putUrl = '/api/video/';
         // REF:\zVIDEO\.24\(min.1.00,6.00)
         this._deleteUrl = '/api/video/';
+        // UPLOAD ++
+        this.filesToUpload = [];
+        this.uri = 'http://localhost:3000/api/upload';
     }
+    // UPLOAD ++
+    VideoService.prototype.upload = function () {
+        var formData = new FormData();
+        var files = this.filesToUpload;
+        console.log(files);
+        for (var i = 0; i < files.length; i++) {
+            formData.append('uploads[]', files[i], files[i]['name']);
+        }
+        console.log('form data variable :   ' + formData.toString());
+        this._http.post(this.uri, formData)
+            .map(function (files) { return files.json(); })
+            .subscribe(function (files) { return console.log('files', files); });
+    };
+    // UPLOAD ++
+    VideoService.prototype.fileChangeEvent = function (fileInput) {
+        this.filesToUpload = fileInput.target.files;
+        // captura nome do ficheiro
+        //this.product.photo = fileInput.target.files[0]['name'];
+    };
+    // 
     VideoService.prototype.getVideos = function () {
         // captura todos os videos no pedido http.get("/api/videos")
         return this._http.get(this._getUrl)
@@ -733,15 +744,15 @@ var VideoService = (function () {
     };
     // adicionar video na BD
     VideoService.prototype.addVideo = function (video) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers });
         return this._http.post(this._postUrl, JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
     // update video na BD
     VideoService.prototype.updateVideo = function (video) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers });
         return this._http.put(this._putUrl + video._id, JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
@@ -752,7 +763,7 @@ var VideoService = (function () {
     };
     VideoService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
     ], VideoService);
     return VideoService;
     var _a;
@@ -917,7 +928,7 @@ module.exports = "<p>\n  register works!\n</p>\n"
 /***/ 341:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\r\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\r\n\r\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\r\n<div class=\"container-fluid\">\r\n<div class=\"row\">\r\n  <div class=\"col-sm-9\">\r\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\r\n    <div *ngIf=\"!hideNewVideo\">\r\n      <h2>New Video</h2>\r\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\r\n        <div class=\"form-group\">\r\n          <label>Title</label>\r\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Url</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\r\n        </div>\r\n    \r\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\r\n      </form>\r\n      <br>\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <input id=\"cin\" name=\"cin\" type=\"file\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload a file...\" multiple/>\r\n            <button type=\"button\" class=\"btn btn-success btn-s\" (click)=\"upload()\">\r\n                <i class=\"glyphicon glyphicon-open-file\"></i>&nbsp;Upload\r\n            </button>\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <!-- >> -->  \r\n\r\n    </div>\r\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\r\n    <!-- (\"deleteVideoEvent\")=((\"deleteVideoEvent\"):video-detail.component.ts) -->\r\n    <!-- (\"updateVideoEvent\")=((\"updateVideoEvent\"):video-detail.component.ts) -->\r\n    <!-- (\"[*video]\")=((\"@Input() *video\"):video-detail.component) - não tem de ser \"video\" -->\r\n    <!-- \"onUpdateVideoEvent($event)\",\"onDeleteVideoEvent($event)\",\"selectedVideo\":video-center.component.ts -->\r\n    <app-video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\r\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\r\n      *ngIf=\"selectedVideo && hideNewVideo\" \r\n      [video]=\"selectedVideo\">\r\n    </app-video-detail>\r\n  </div>\r\n  <div class=\"col-sm-3\">\r\n\r\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\r\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\r\n <!-- PROPRETY_DATA_BINDING:\r\n          . (\"[*videos]\")=(\"@Input() *videos\":video-list.component.ts) - não tem de ser \"videos\"\r\n          . \"arrayVideos\":video-center.component.ts(\"arrayVideos:Array<Video>\")\r\n          . (\"*Selectvideo\")=(\"@Output() *Selectvideo\":video-list.component.ts)\") - não tem de ser \"Selectvideo\"\r\n          . \"onSelectedVideo($event)\":video-center.component.ts(\"onSelectedVideo(video:any)\")                                          -->\r\n      <app-video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"arrayVideos\"></app-video-list>\r\n  </div>\r\n</div>\r\n</div>"
+module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\r\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\r\n\r\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\r\n<div class=\"container-fluid\">\r\n<div class=\"row\">\r\n  <div class=\"col-sm-9\">\r\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\r\n    <div *ngIf=\"!hideNewVideo\">\r\n      <h2>New Video</h2>\r\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\r\n        <div class=\"form-group\">\r\n          <label>Title</label>\r\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Url</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\r\n        </div>\r\n    \r\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\r\n      </form>\r\n      <br>\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <input id=\"cin\" name=\"cin\" type=\"file\" (change)=\"onFileChangeEvent($event)\" placeholder=\"Upload a file...\" multiple/>\r\n            <button type=\"button\" class=\"btn btn-success btn-s\" (click)=\"onUpload()\">\r\n                <i class=\"glyphicon glyphicon-open-file\"></i>&nbsp;Upload\r\n            </button>\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <!-- >> -->  \r\n\r\n    </div>\r\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\r\n    <!-- (\"deleteVideoEvent\")=((\"deleteVideoEvent\"):video-detail.component.ts) -->\r\n    <!-- (\"updateVideoEvent\")=((\"updateVideoEvent\"):video-detail.component.ts) -->\r\n    <!-- (\"[*video]\")=((\"@Input() *video\"):video-detail.component) - não tem de ser \"video\" -->\r\n    <!-- \"onUpdateVideoEvent($event)\",\"onDeleteVideoEvent($event)\",\"selectedVideo\":video-center.component.ts -->\r\n    <app-video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\r\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\r\n      *ngIf=\"selectedVideo && hideNewVideo\" \r\n      [video]=\"selectedVideo\">\r\n    </app-video-detail>\r\n  </div>\r\n  <div class=\"col-sm-3\">\r\n\r\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\r\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\r\n <!-- PROPRETY_DATA_BINDING:\r\n          . (\"[*videos]\")=(\"@Input() *videos\":video-list.component.ts) - não tem de ser \"videos\"\r\n          . \"arrayVideos\":video-center.component.ts(\"arrayVideos:Array<Video>\")\r\n          . (\"*Selectvideo\")=(\"@Output() *Selectvideo\":video-list.component.ts)\") - não tem de ser \"Selectvideo\"\r\n          . \"onSelectedVideo($event)\":video-center.component.ts(\"onSelectedVideo(video:any)\")                                          -->\r\n      <app-video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"arrayVideos\"></app-video-list>\r\n  </div>\r\n</div>\r\n</div>"
 
 /***/ }),
 

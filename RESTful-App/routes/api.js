@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 // importar modelo video.js
 const Video = require('../models/video');
+// ** UPLOAD
 const multer = require('multer');
 // const mongoose = require('mongoose'); - BD é chamada no arranque em app.js
 
@@ -34,6 +35,7 @@ const upload = multer({storage: storage});
 
 // ** UPLOAD ficheiros
 // REF.\#TRABALHOS-RESTful\UPLOADING\Solução_Angular-2
+// POSTMAN: REF:\TRABALHOS\UPLOADS\.1\(min.6.30)
 router.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     console.log('uploading a file');
     console.log('files', req.files);

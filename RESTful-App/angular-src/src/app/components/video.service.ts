@@ -8,7 +8,6 @@ import { Video } from './video';
 // "/api/videos" é a rota para servidor expressJs: app.js porto:3000
 @Injectable()
 export class VideoService {
-
   // REF:\zVIDEO\.20\(min.1.00)
   // rotas = \routes\api.js : para chamar servidor expressJs: Ex: http://localhost:3000/api/videos
   // notar que "putUrl = '/api/video/" termina com "/" pq em \routes\api.js temos: "router.put('/videos/:id',..)"
@@ -20,8 +19,34 @@ export class VideoService {
   // REF:\zVIDEO\.24\(min.1.00,6.00)
   private _deleteUrl = '/api/video/';
 
+   // UPLOAD ++
+   filesToUpload: Array<File> = [];
+   uri = 'http://localhost:3000/api/upload';
+
   constructor(private _http: Http) { }
 
+  // UPLOAD ++
+  upload() {
+    const formData: any = new FormData();
+    const files: Array<File> = this.filesToUpload;
+    console.log(files);
+
+    for(let i =0; i < files.length; i++){
+        formData.append('uploads[]', files[i], files[i]['name']);
+    }
+    console.log('form data variable :   '+ formData.toString());
+    this._http.post(this.uri, formData)
+        .map(files => files.json())
+        .subscribe(files => console.log('files', files))
+}
+  // UPLOAD ++
+  fileChangeEvent(fileInput: any) {
+      this.filesToUpload = <Array<File>>fileInput.target.files;
+      // captura nome do ficheiro
+      //this.product.photo = fileInput.target.files[0]['name'];
+  }
+
+  // 
   getVideos() {
     // captura todos os videos no pedido http.get("/api/videos")
     return this._http.get(this._getUrl)
