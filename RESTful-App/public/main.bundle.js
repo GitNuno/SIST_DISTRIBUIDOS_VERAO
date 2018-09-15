@@ -31,7 +31,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/main.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/main.js.map
 
 /***/ }),
 
@@ -63,7 +63,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/app.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/app.component.js.map
 
 /***/ }),
 
@@ -74,7 +74,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(155);
@@ -164,7 +164,7 @@ var AppModule = (function () {
     return AppModule;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/app.module.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/app.module.js.map
 
 /***/ }),
 
@@ -200,7 +200,7 @@ var DashboardComponent = (function () {
     return DashboardComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/dashboard.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/dashboard.component.js.map
 
 /***/ }),
 
@@ -236,7 +236,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/home.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/home.component.js.map
 
 /***/ }),
 
@@ -272,7 +272,7 @@ var LoginComponent = (function () {
     return LoginComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/login.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/login.component.js.map
 
 /***/ }),
 
@@ -308,7 +308,7 @@ var NavbarComponent = (function () {
     return NavbarComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/navbar.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/navbar.component.js.map
 
 /***/ }),
 
@@ -344,7 +344,7 @@ var ProfileComponent = (function () {
     return ProfileComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/profile.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/profile.component.js.map
 
 /***/ }),
 
@@ -380,7 +380,7 @@ var RegisterComponent = (function () {
     return RegisterComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/register.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/register.component.js.map
 
 /***/ }),
 
@@ -421,7 +421,7 @@ var SafePipe = (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/safe.pipe.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/safe.pipe.js.map
 
 /***/ }),
 
@@ -431,6 +431,7 @@ var SafePipe = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video_service__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoCenterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -443,12 +444,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var VideoCenterComponent = (function () {
-    function VideoCenterComponent(_videoService) {
+    // ++private http: Http
+    function VideoCenterComponent(_videoService, http) {
         this._videoService = _videoService;
+        this.http = http;
+        // UPLOAD+++
+        this.filesToUpload = [];
         // esconder form para adicionar novo video
         this.hideNewVideo = true;
     }
+    // UPLOAD+++
+    VideoCenterComponent.prototype.upload = function () {
+        var formData = new FormData();
+        var files = this.filesToUpload;
+        console.log(files);
+        for (var i = 0; i < files.length; i++) {
+            formData.append('uploads[]', files[i], files[i]['name']);
+        }
+        console.log('form data variable :   ' + formData.toString());
+        this.http.post('http://localhost:3000/api/upload', formData)
+            .map(function (files) { return files.json(); })
+            .subscribe(function (files) { return console.log('files', files); });
+    };
+    VideoCenterComponent.prototype.fileChangeEvent = function (fileInput) {
+        this.filesToUpload = fileInput.target.files;
+        //this.product.photo = fileInput.target.files[0]['name'];
+    };
     // REF:\zVIDEO\.20\(min.2.30)
     // subscribe ao serviço "video.service.ts" que liga Angular com BD
     // inicializa array(videos) com os videos existentes na BD
@@ -517,13 +540,13 @@ var VideoCenterComponent = (function () {
             styles: [__webpack_require__(331)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__video_service__["a" /* VideoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object])
     ], VideoCenterComponent);
     return VideoCenterComponent;
-    var _a;
+    var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-center.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-center.component.js.map
 
 /***/ }),
 
@@ -603,7 +626,7 @@ var VideoDetailComponent = (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-detail.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-detail.component.js.map
 
 /***/ }),
 
@@ -661,7 +684,7 @@ var VideoListComponent = (function () {
     return VideoListComponent;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-list.component.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video-list.component.js.map
 
 /***/ }),
 
@@ -670,7 +693,7 @@ var VideoListComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoService; });
@@ -710,15 +733,15 @@ var VideoService = (function () {
     };
     // adicionar video na BD
     VideoService.prototype.addVideo = function (video) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this._http.post(this._postUrl, JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
     // update video na BD
     VideoService.prototype.updateVideo = function (video) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         return this._http.put(this._putUrl + video._id, JSON.stringify(video), options)
             .map(function (response) { return response.json(); });
     };
@@ -729,13 +752,13 @@ var VideoService = (function () {
     };
     VideoService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
     ], VideoService);
     return VideoService;
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video.service.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video.service.js.map
 
 /***/ }),
 
@@ -752,7 +775,7 @@ var Video = (function () {
     return Video;
 }());
 
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/video.js.map
 
 /***/ }),
 
@@ -768,7 +791,7 @@ var Video = (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=C:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/environment.js.map
+//# sourceMappingURL=c:/Users/Nuno/Documents/_MY_PROJECTS/SIST_DISTRIBUIDOS/RESTful-App/angular-src/src/environment.js.map
 
 /***/ }),
 
@@ -824,7 +847,7 @@ module.exports = ""
 /***/ 331:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* .header-section{\r\n    height: 80px;\r\n    line-height: 80px;\r\n    color: beige;\r\n    background-color: rgb(46, 43, 43);\r\n    font-size: 24px;\r\n    padding-left: 20px;\r\n}\r\n\r\n.card{\r\n    background-color: white;\r\n    box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);\r\n    color:black;\r\n    margin: 20px;\r\n    padding: 10px;\r\n}\r\n\r\n.uploadList{\r\n    padding: 10px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n} */"
 
 /***/ }),
 
@@ -894,14 +917,14 @@ module.exports = "<p>\n  register works!\n</p>\n"
 /***/ 341:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\r\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\r\n\r\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-9\">\r\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\r\n    <div *ngIf=\"!hideNewVideo\">\r\n      <h2>New Video</h2>\r\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\r\n        <div class=\"form-group\">\r\n          <label>Title</label>\r\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Url</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\r\n      </form>\r\n    </div>\r\n\r\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\r\n    <!-- \"updateVideoEvent\":video-detail.component.ts - \"onUpdateVideoEvent\":video-center.component.ts -->\r\n    <!-- (\"[*video]\")=(\"@Input() *video: Video;\":video-detail.component) - não tem de ser \"video\" -->\r\n    <!-- \"selectedVideo\":video-center.component.ts(\"selectedVideo: Video;\") -->\r\n    <app-video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\r\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\r\n      *ngIf=\"selectedVideo && hideNewVideo\" \r\n      [video]=\"selectedVideo\">\r\n    </app-video-detail>\r\n  </div>\r\n  <div class=\"col-sm-3\">\r\n\r\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\r\n \r\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\r\n <!-- PROPRETY_DATA_BINDING:\r\n          . (\"[*videos]\")=(\"@Input() *videos\":video-list.component.ts) - não tem de ser \"videos\"\r\n          . \"arrayVideos\":video-center.component.ts(\"arrayVideos:Array<Video>\")\r\n          . (\"*Selectvideo\")=(\"@Output() *Selectvideo\":video-list.component.ts)\") - não tem de ser \"Selectvideo\"\r\n          . \"onSelectedVideo($event)\":video-center.component.ts(\"onSelectedVideo(video:any)\")                                          -->\r\n      <app-video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"arrayVideos\"></app-video-list>\r\n  </div>\r\n</div>"
+module.exports = "<!-- REF:\\zVIDEO\\.16\\(min.1.00)-->\r\n<!-- REF:\\zVIDEO\\.18\\(min.7.30) EXPLAIN-ALL!! -->\r\n\r\n<!--\"Anexar\" html de video-list e video-detail em video-center-->\r\n<div class=\"container-fluid\">\r\n<div class=\"row\">\r\n  <div class=\"col-sm-9\">\r\n    <!-- REF:\\zVIDEO\\.22\\(min.1.00, min.4.00, min.7.15)-->\r\n    <div *ngIf=\"!hideNewVideo\">\r\n      <h2>New Video</h2>\r\n      <form #form=\"ngForm\" (ngSubmit)=\"onSubmitAddVideo(form.value)\" class=\"well\">\r\n        <div class=\"form-group\">\r\n          <label>Title</label>\r\n          <input type=\"text\" class=\"form-control\" required name=\"title\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Url</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"url\" ngModel>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Description</label>\r\n            <input type=\"text\" class=\"form-control\" required name=\"description\" ngModel>\r\n        </div>\r\n    \r\n        <button type=\"submit\" class=\"btn btn-success\" >Save</button>\r\n      </form>\r\n      <br>\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <input id=\"cin\" name=\"cin\" type=\"file\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload a file...\" multiple/>\r\n            <button type=\"button\" class=\"btn btn-success btn-s\" (click)=\"upload()\">\r\n                <i class=\"glyphicon glyphicon-open-file\"></i>&nbsp;Upload\r\n            </button>\r\n        <!-- >> -->\r\n        <!-- >> -->\r\n        <!-- >> -->  \r\n\r\n    </div>\r\n    <!-- REF:\\zVIDEO\\.23+24\\(min.3.00, 5.30)-->\r\n    <!-- (\"deleteVideoEvent\")=((\"deleteVideoEvent\"):video-detail.component.ts) -->\r\n    <!-- (\"updateVideoEvent\")=((\"updateVideoEvent\"):video-detail.component.ts) -->\r\n    <!-- (\"[*video]\")=((\"@Input() *video\"):video-detail.component) - não tem de ser \"video\" -->\r\n    <!-- \"onUpdateVideoEvent($event)\",\"onDeleteVideoEvent($event)\",\"selectedVideo\":video-center.component.ts -->\r\n    <app-video-detail (updateVideoEvent)=\"onUpdateVideoEvent($event)\"\r\n      (deleteVideoEvent)=\"onDeleteVideoEvent($event)\"\r\n      *ngIf=\"selectedVideo && hideNewVideo\" \r\n      [video]=\"selectedVideo\">\r\n    </app-video-detail>\r\n  </div>\r\n  <div class=\"col-sm-3\">\r\n\r\n  <button (click)=\"newVideo()\" style=\"margin-bottom:2px;\" type=\"button\" class=\"btn btn-success btn-block\" >Add New Video</button>\r\n <!-- REF:\\zVIDEO\\.17\\(min.2.00)-->\r\n <!-- PROPRETY_DATA_BINDING:\r\n          . (\"[*videos]\")=(\"@Input() *videos\":video-list.component.ts) - não tem de ser \"videos\"\r\n          . \"arrayVideos\":video-center.component.ts(\"arrayVideos:Array<Video>\")\r\n          . (\"*Selectvideo\")=(\"@Output() *Selectvideo\":video-list.component.ts)\") - não tem de ser \"Selectvideo\"\r\n          . \"onSelectedVideo($event)\":video-center.component.ts(\"onSelectedVideo(video:any)\")                                          -->\r\n      <app-video-list (Selectvideo)=\"onSelectedVideo($event)\" [videos]=\"arrayVideos\"></app-video-list>\r\n  </div>\r\n</div>\r\n</div>"
 
 /***/ }),
 
 /***/ 342:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <!-- iframe limita-se a \"reproduzir\" url da BD correspondente ao video seleccionado  -->\n    <!-- url: /uploads/VAN.mp3 é permitido pq é publico: -->\n    <!-- [video]=\"selectedVideo\":videocenter.component.html - data-binding\n                 \"selectedVideo\": metodo que devolve objeto video seleccionado -->\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 6.00) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
+module.exports = "<!-- REF:\\zVIDEO\\.19\\(min.1.30) -->\n<div>\n    <!-- iframe limita-se a \"reproduzir\" url da BD correspondente ao video seleccionado  -->\n    <!-- url: /myFile.mp3 é permitido pq é publico: -->\n    <!-- [video]=\"selectedVideo\":videocenter.component.html - data-binding\n                 \"selectedVideo\": metodo que devolve objeto video seleccionado -->\n    <div>\n        <iframe width=\"100%\" height=\"300 px\" [src]=\"video.url | safe\">\n        </iframe>\n    </div>\n    <form>\n        <div *ngIf=\"editTitle\" class=\"form-group\">\n            <input type=\"input\" class=\"form-control\" name=\"title\" required placeholder=\"title\"\n            [(ngModel)]=\"video.title\">\n        </div>\n        <h3 *ngIf=\"!editTitle\" (click)=\"onTitleClick()\">{{video.title}}</h3>\n        <div class=\"form-group\">\n                <input type=\"input\" class=\"form-control\" name=\"url\" required placeholder=\"url\"\n                [(ngModel)]=\"video.url\">\n        </div>\n        <div class=\"form-group\">\n                <textarea class=\"form-control\" rows=\"5\" name=\"desc\" [(ngModel)]=\"video.description\">\n                </textarea>\n        </div>\n        <!-- REF:\\zVIDEO\\.23\\(min.1.30, 5.30) -->\n        <button type=\"button\" (click)=\"updateVideo()\" class=\"btn btn-primary\">Update</button>\n        <!-- REF:\\zVIDEO\\.24\\(min.1.00, 6.00) -->\n        <button type=\"button\" (click)=\"deleteVideo()\" class=\"btn btn-danger\">Delete</button>\n        <!-- espaço -->\n        <div> <br><br><br> </div>\n    </form>\n</div>\n"
 
 /***/ }),
 

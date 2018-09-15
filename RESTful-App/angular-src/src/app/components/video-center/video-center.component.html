@@ -2,6 +2,7 @@
 <!-- REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!! -->
 
 <!--"Anexar" html de video-list e video-detail em video-center-->
+<div class="container-fluid">
 <div class="row">
   <div class="col-sm-9">
     <!-- REF:\zVIDEO\.22\(min.1.00, min.4.00, min.7.15)-->
@@ -20,14 +21,27 @@
             <label>Description</label>
             <input type="text" class="form-control" required name="description" ngModel>
         </div>
+    
         <button type="submit" class="btn btn-success" >Save</button>
       </form>
-    </div>
+      <br>
+        <!-- >> -->
+        <!-- >> -->
+        <!-- >> -->
+        <input id="cin" name="cin" type="file" (change)="fileChangeEvent($event)" placeholder="Upload a file..." multiple/>
+            <button type="button" class="btn btn-success btn-s" (click)="upload()">
+                <i class="glyphicon glyphicon-open-file"></i>&nbsp;Upload
+            </button>
+        <!-- >> -->
+        <!-- >> -->
+        <!-- >> -->  
 
+    </div>
     <!-- REF:\zVIDEO\.23+24\(min.3.00, 5.30)-->
-    <!-- "updateVideoEvent":video-detail.component.ts - "onUpdateVideoEvent":video-center.component.ts -->
-    <!-- ("[*video]")=("@Input() *video: Video;":video-detail.component) - não tem de ser "video" -->
-    <!-- "selectedVideo":video-center.component.ts("selectedVideo: Video;") -->
+    <!-- ("deleteVideoEvent")=(("deleteVideoEvent"):video-detail.component.ts) -->
+    <!-- ("updateVideoEvent")=(("updateVideoEvent"):video-detail.component.ts) -->
+    <!-- ("[*video]")=(("@Input() *video"):video-detail.component) - não tem de ser "video" -->
+    <!-- "onUpdateVideoEvent($event)","onDeleteVideoEvent($event)","selectedVideo":video-center.component.ts -->
     <app-video-detail (updateVideoEvent)="onUpdateVideoEvent($event)"
       (deleteVideoEvent)="onDeleteVideoEvent($event)"
       *ngIf="selectedVideo && hideNewVideo" 
@@ -37,7 +51,6 @@
   <div class="col-sm-3">
 
   <button (click)="newVideo()" style="margin-bottom:2px;" type="button" class="btn btn-success btn-block" >Add New Video</button>
- 
  <!-- REF:\zVIDEO\.17\(min.2.00)-->
  <!-- PROPRETY_DATA_BINDING:
           . ("[*videos]")=("@Input() *videos":video-list.component.ts) - não tem de ser "videos"
@@ -46,4 +59,5 @@
           . "onSelectedVideo($event)":video-center.component.ts("onSelectedVideo(video:any)")                                          -->
       <app-video-list (Selectvideo)="onSelectedVideo($event)" [videos]="arrayVideos"></app-video-list>
   </div>
+</div>
 </div>

@@ -2,8 +2,19 @@
 // Todos os pedidos á BD serão atendidos nas rotas
 const express = require('express');
 const router = express.Router();
+// importar modelo video.js
+const Video = require('../models/video');
 const multer = require('multer');
 // const mongoose = require('mongoose'); - BD é chamada no arranque em app.js
+
+// ** UPLOAD - REF.\#TRABALHOS-RESTful\UPLOADING\Solução_Angular-2
+// REF.\PART II\#BIBLIOTECA\BR-Webservice\(min.1.10)
+// headers and content type
+router.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 // ** UPLOAD - REF:\TRABALHOS\UPLOADS\.1\(min.9.30)
 const storage = multer.diskStorage({
@@ -21,8 +32,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-// importar modelo video.js
-const Video = require('../models/video');
+// ** UPLOAD ficheiros
+// REF.\#TRABALHOS-RESTful\UPLOADING\Solução_Angular-2
+router.post("/upload", upload.array("uploads[]", 12), function (req, res) {
+    console.log('uploading a file');
+    console.log('files', req.files);
+    res.send(req.files);
+   });
+
 
 // REF:\zVIDEO\.11\(min.1.00)
 // ** GET
@@ -70,8 +87,12 @@ router.get('/video/:id', function(req, res){
 // ** INSERT/CREATE
 // ** UPLOAD - REF:\TRABALHOS\UPLOADS\.1\(min.2.30)
 // notar que a rota é api/video e não api/videos
-router.post('/video', upload.single('file'), function(req, res){
+// upload.array("uploads[]",12),
+
+router.post('/video', function(req, res){
     console.log('Posting a video');
+    // console.log('files', req.files);
+    // res.send(req.files);
     // criar video com VideoModel
     var newVideo = new Video();
     // capturar video com req.body_object

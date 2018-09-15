@@ -4,17 +4,9 @@ const config = require('../config/database');
 // CRIAR MODELO PARA VIDEO
 // schema define como mongoose escreve dados na BD
 const VideoSchema = mongoose.Schema ({
-  title: {
-    type: String,
-    required: true
-  },
-  url: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-  }
+  title: { type: String, required: true },
+  url: { type: String, required: true },
+  description: { type: String }
 });
 // cria modelo com nome "video" - "videos" é o nome da coleccção
 // usado nas rotas para GET, POST... CRUD

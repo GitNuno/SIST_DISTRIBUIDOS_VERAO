@@ -33,7 +33,7 @@ export class VideoService {
   addVideo(video: Video) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this._http.post(this._postUrl, JSON.stringify(video), options)
+    return this._http.post(this._postUrl, JSON.stringify(video),options)
       // a resposta obtida tem de ser mapeada como objeto json
       .map((response: Response) => response.json());
   }

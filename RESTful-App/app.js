@@ -57,7 +57,7 @@ require('./config/passport')(passport);
 // join(__dirname, 'public') - junta path "__dirname(dir-atual) com \public
 // dá a expressJs acesso á pasta \public - permite ligar expressJs com angular
 app.use(express.static(path.join(__dirname, 'public')));
-// orig: '/uploads' obrigava-me no url do formulario escrever: Ex:"/uploads/Van.mp3"
+// orig: '/uploads' em vez de '/' obrigava-me no url do formulario escrever: Ex:"/uploads/Van.mp3"
 app.use('/',express.static(path.join(__dirname, 'uploads')));
 
 // rota qd n
