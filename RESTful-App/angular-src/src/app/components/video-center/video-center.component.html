@@ -21,21 +21,15 @@
             <label>Description</label>
             <input type="text" class="form-control" required name="description" ngModel>
         </div>
-    
         <button type="submit" class="btn btn-success" >Save</button>
       </form>
       <br>
-        <!-- >> -->
-        <!-- >> -->
-        <!-- >> -->
+        <!-- UPLOAD -->
         <input id="cin" name="cin" type="file" (change)="onFileChangeEvent($event)" placeholder="Upload a file..." multiple/>
             <button type="button" class="btn btn-success btn-s" (click)="onUpload()">
                 <i class="glyphicon glyphicon-open-file"></i>&nbsp;Upload
             </button>
         <!-- >> -->
-        <!-- >> -->
-        <!-- >> -->  
-
     </div>
     <!-- REF:\zVIDEO\.23+24\(min.3.00, 5.30)-->
     <!-- ("deleteVideoEvent")=(("deleteVideoEvent"):video-detail.component.ts) -->

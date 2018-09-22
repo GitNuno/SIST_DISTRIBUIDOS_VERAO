@@ -24,7 +24,6 @@ export class VideoCenterComponent implements OnInit {
   // esconder form para adicionar novo video
   hideNewVideo = true;
 
-  
   constructor(private _videoService: VideoService) { }
 
 // REF:\zVIDEO\.20\(min.2.30)

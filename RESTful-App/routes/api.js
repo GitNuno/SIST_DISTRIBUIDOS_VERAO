@@ -2,7 +2,7 @@
 // Todos os pedidos á BD serão atendidos nas rotas
 const express = require('express');
 const router = express.Router();
-// importar modelo video.js
+// importar modelo video.js de '../models/video'
 const Video = require('../models/video');
 // ** UPLOAD
 const multer = require('multer');
