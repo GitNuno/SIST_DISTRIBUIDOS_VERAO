@@ -17,6 +17,12 @@ import { VideoListComponent } from './components/video-list/video-list.component
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 // \zVIDEO\.21\(min.1.00)
 import { SafePipe } from './components/safe.pipe';
+// \AUTH\.6(07.00)
+// ver 'providers' abaixo
+// Notar que não fiz import para ./services/video.service (mas funciona!!)
+ import { ValidateService } from './services/validate.service';
+// \AUTH\.6\(15.20)
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 // MUDAR(se houver tempo): REF:\ANGULAR-2\ANGULAR_COMPLETO\.24(min.4.00)
 // REF: \zVIDEO\15(min.02.00)
@@ -56,9 +62,11 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {useHash: true})
+    FlashMessagesModule.forRoot(),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
   ],
-  providers: [],
+  // ValidateService
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

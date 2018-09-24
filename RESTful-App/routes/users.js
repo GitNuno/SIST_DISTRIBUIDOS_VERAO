@@ -13,7 +13,7 @@ const User = require('../models/user');
 
 // REGISTO
 // REF:\AUTH\.2\(min.15.30)
-// faz /users/register automaticamente - ver: "app.use('/users', users)" em app.js
+// fica /users/register automaticamente - ver: "app.use('/users', users)" em app.js
 router.post('/register', (req, res, next) => {
     // REF:\AUTH\.3\(min.7.00)
     // req.body - guardar o que foi introduzido no formulário
@@ -23,7 +23,7 @@ router.post('/register', (req, res, next) => {
     username: req.body.username,
     password: req.body.password
   });
-  // addUser: definido em models\user.js
+  // addUser: definido em \models\user.js
   User.addUser(newUser, (err, user) => {
     if(err){
       res.json({success: false, msg:'Failed to register user'});

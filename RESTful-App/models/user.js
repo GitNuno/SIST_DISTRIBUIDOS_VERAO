@@ -8,35 +8,26 @@ const config = require('../config/database');
 // vai ter os campos (name, e-mail,...) + funções
 // schema define como mongoose escreve dados na BD
 const UserSchema = mongoose.Schema ({
-  name: {
-    type: String
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  username: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  }
+  name: { type: String },
+  email: { type: String, required: true },
+  username: { type: String, required: true },
+  password: { type: String, required: true }
 });
 // REF:\AUTH\.3\(min.03.30)
 // cria modelo com nome "video" baseado em UserSchema
 // usado nas rotas para GET, POST... CRUD
 const User = module.exports = mongoose.model('User', UserSchema);
 
-// FUNÇÕES: -------------------------------------------------------
+
+// Métodos: -------------------------------------------------------
+// não inclui métodos em /models/video (são mais simples)
 // module.exports: para poder usar "getUserById" a partir do exterior
 // Todos os pedidos á BD serão atendidos em \routes\users
 module.exports.getUserById = function(id, callback) {
   User.findById(id, callback);
 }
 
-// chamada em users.js
+// chamada em routes/users.js
 module.exports.getUserByUsername = function(username, callback) {
   // query para User.findOne()
   const query = {username: username}

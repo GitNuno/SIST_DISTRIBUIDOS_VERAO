@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FlashMessageModule} from 'angular-flash-message';
 
 // decorador
 @Component({

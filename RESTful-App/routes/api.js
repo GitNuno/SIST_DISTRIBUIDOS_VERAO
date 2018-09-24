@@ -89,8 +89,6 @@ router.get('/video/:id', function(req, res){
 // ** INSERT/CREATE
 // ** UPLOAD - REF:\TRABALHOS\UPLOADS\.1\(min.2.30)
 // notar que a rota é api/video e não api/videos
-// upload.array("uploads[]",12),
-
 router.post('/video', function(req, res){
     console.log('Posting a video');
     // console.log('files', req.files);

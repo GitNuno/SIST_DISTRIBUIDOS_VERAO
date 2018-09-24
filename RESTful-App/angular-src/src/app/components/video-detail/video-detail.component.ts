@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
-import { Video } from '../video';
+import { Video } from '../../models/video';
 
 // REF:\zVIDEO\.18\(min.7.30) EXPLAIN-ALL!!
 // REF:\zVIDEO\.23\(min.1.30, 5.30)
