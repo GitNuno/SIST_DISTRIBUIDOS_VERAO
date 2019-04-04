@@ -1,0 +1,4 @@
+
+::
+Não foi necessario instalar qq modulo tipo: npm i request,
+porque só sao invocados modulos nativos.

@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-weather",
+  "version": "1.0.0",
+  "description": "app weaher",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "weather"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "nuno",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
