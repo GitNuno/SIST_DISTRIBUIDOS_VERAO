@@ -28,7 +28,7 @@ request(url, function (err, response, body) {
  if(err){
  console.log(`error:`, error);
  } else {
-// formata JSON e coloca-o num objeto "weather"
+// transforma body em JSON e coloca-o num objeto "weather"
  let weather = JSON.parse(body);
  let dados = `Temperatura para a ${weather.name}:
  -------------------------------------------
