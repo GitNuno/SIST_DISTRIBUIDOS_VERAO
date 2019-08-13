@@ -1,5 +1,6 @@
 module.exports = {
-  // 27017:porto MongoBD(verificar CMD: "mongo") restfullBD: Nome_BD
+  // verificar: C:\Program Files\MongoDB\Server\4.0\bin > mongo
+  // 27017:porto, restfullBD: Nome_BD
   database_1: 'mongodb://localhost:27017/restfullBD', 
   // database_2: 'mongodb://localhost:27017/videoplayer', 
   
